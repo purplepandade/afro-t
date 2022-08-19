@@ -1,0 +1,138 @@
+<style>
+  .headerbannercontainer{
+    background-image:url('{{section.settings.bg  | img_url:"1290x"}}');
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  .headerbanner{
+    display:flex;
+    padding-top:1rem;
+    padding-bottom:2rem;
+    gap:1rem;
+  }
+
+  .headerblock{
+    padding:1.2rem;
+    border-radius: 10px;
+  background-size: contain;
+   background-position: right bottom; /*Positioning*/
+   background-repeat: no-repeat;
+  }
+
+  .headerblock-1{
+    
+  }
+  
+  .headerblock-2{
+    
+    flex-basis:calc(70% - 1.1rem);
+  }
+
+  .headerblockcontent{
+    max-width:50%;
+  }
+
+  .headerblockcontent h2 {
+    font-size:1.75rem;
+  }
+
+  .headerblockcontent p {
+    font-size:0.8rem;
+    color:#616161;
+  }
+
+  
+</style>
+
+<div class="headerbannercontainer small--hide" style="background-color: {{ section.settings.bgcolor }}">
+<div class="headerbanner page-width ">
+  {% for block in section.blocks %}
+<div class="headerblock headerblock-{{ forloop.index }}" style="background-color: {{ block.settings.bgcolor }};background-image:url('{{ block.settings.bg |  img_url:"500x" }}');">
+<div class="headerblockcontent">
+<h2 class="headerblockh2">
+{{ block.settings.title }}
+</h2>
+<p class="headerblockp">{{ block.settings.p }}</p>
+
+<a class="btn"  href="{{ block.settings.url }}">{{ block.settings.urltext }}</a>
+</div>
+</div>
+  {% endfor %}
+
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "BannerSection",
+  "class": "small--hide",
+  "max_blocks": 2,
+  "settings": [
+    {
+  "type": "image_picker",
+  "id": "bg",
+  "label": "Hintergrundbild"
+  },
+    {
+  "type": "color",
+  "id": "bgcolor",
+  "label": "Hintergrundfarbe Section",
+  "default": "#ffffff"
+}
+  ],
+  "blocks": [
+    {
+      "type": "type",
+      "name":"Block",
+        "settings": [
+    {
+  "type": "image_picker",
+  "id": "bg",
+  "label": "Hintergrundbild"
+  },
+  {
+  "type": "textarea",
+  "id": "title",
+  "label": "Überschrift"
+  },
+  {
+  "type": "textarea",
+  "id": "p",
+  "label": "Fließtext"
+  },
+{
+  "type": "url",
+  "id": "url",
+  "label": "Link"
+  },
+{
+  "type": "text",
+  "id": "urltext",
+  "label": "Linktext"
+},
+              {
+  "type": "color",
+  "id": "bgcolor",
+  "label": "Hintergrundfarbe Block",
+  "default": "#ffffff"
+}
+
+]
+      
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header Section | Hasaan"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

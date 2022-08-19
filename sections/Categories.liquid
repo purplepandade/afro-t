@@ -1,0 +1,69 @@
+<div class="page-width">
+<div class="custompadding">
+<h3 class="indexheading">{{ section.settings.title }}</h3>
+<div class="catholder ">
+{% for block in section.blocks %}
+{% assign collection = collections[block.settings.collection] %}
+
+<a class="catchild" href="{{ collection.url }}">
+<div class="catflag">
+  <img src="{{ block.settings.image  |img_url:"200x" }}">
+</div>
+<div class="cattext">
+<p class="h3">{{ block.settings.title }}</p>
+<p class="catsub">{{ collection.all_products_count }} Produkte</p>
+</div>
+
+</a>
+{% endfor %}
+</div>
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "Categories 1",
+  "settings": [
+       {
+      "type": "text",
+      "id": "title",
+      "label": "Titel"
+    } 
+  ],
+  "blocks": [
+    {
+      "type": "type",
+      "name":"category",
+      "settings": [
+        {
+  "type": "collection",
+  "id": "collection",
+  "label": "Kategorie"
+},
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titel"
+    },
+      {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Flagge"
+    }
+        
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kategorien Section mit Flaggen"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

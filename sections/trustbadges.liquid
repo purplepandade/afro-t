@@ -1,0 +1,58 @@
+<div class="page-width trustbadges">
+{%for block in section.blocks%}
+<div class="badge">
+<div class="badge-img"><img src="{{block.settings.img | img_url:"200x"}}"></div>
+<div class="badge-txt">
+<div class="badgeh2">
+<strong>{{block.settings.title}}</strong>
+</div>
+
+<div class="badgesub">
+{{block.settings.subtitle}}
+</div>
+
+</div>
+</div>
+{%endfor%}
+
+</div>
+
+
+{% schema %}
+  {
+    "name": "Trustbadges",
+    "settings": [],
+  "blocks": [
+    {
+      "type": "BAdge",
+"name": "Badge",
+"settings": [{
+  "type": "text",
+  "id": "title",
+  "label": "Heading"
+},
+{
+  "type": "text",
+  "id": "subtitle",
+  "label": "SubHeading"
+},
+{
+  "type": "image_picker",
+  "id": "img",
+  "label": "Logo image"
+}]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trustbadges |PurplePanda"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

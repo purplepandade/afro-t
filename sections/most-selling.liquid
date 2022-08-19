@@ -1,0 +1,50 @@
+<div class="bestselling page-width">
+
+  <div class="butttons"> </div>
+  
+  <div class="scrollable">
+
+
+{% assign count = 0 %}
+{% for product in collections['Bestsellers'].products limit:10 %}
+{% if count == 0 %}
+<div class="customslide">
+{% endif %}
+
+  
+  
+{% render 'p-card',product:product %}
+
+
+{% assign count = count | plus:1 %}
+{% if count == 5 %}
+</div>
+{% endif %} 
+{% if count == 5 %}
+{% assign count = 0 %}
+{% endif %}
+  {% endfor %}
+</div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Bestseller | PurplePanda",
+  
+  "settings": [],
+  "blocks": [
+  ],
+  "presets": [
+    {
+      "name": "Bestseller | PurplePanda"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

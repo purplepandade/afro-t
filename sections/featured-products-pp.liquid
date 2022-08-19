@@ -1,0 +1,43 @@
+<div class="bestselling page-width">
+<div class="scrollable">
+
+{% for block in section.blocks %}
+
+{% assign product = all_products[block.settings.product] %}
+{% render 'p-card',product:product %}
+
+{% endfor %}
+</div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Featured-P | PurplePanda",
+  "settings": [],
+  "blocks": [
+{
+        "type": "product",
+        "name": "Produkt",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Produkt"
+          }
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "Featured Products | PurplePanda"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

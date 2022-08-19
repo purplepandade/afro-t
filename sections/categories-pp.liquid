@@ -1,0 +1,73 @@
+<div class="page-width">
+<div class="custompadding">
+<h3 class="indexheading">{{ section.settings.title }}</h3>
+<div class="catholder align-top">
+{% for block in section.blocks %}
+{% assign collection = collections[block.settings.collection] %}
+<div class="catholder3">
+<a class="catchild" style="background-image:url({{block.settings.image | img_url:"400x"}}); background-color{{ block.settings.color }};" href="{{ collection.url }}">
+
+</a>
+<div class="catttext">
+<p class="cattitle">{{ block.settings.title }}</p>
+<p class="catsub">{{ collection.all_products_count }} Produkte</p>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "Categories 1",
+  "settings": [
+       {
+      "type": "text",
+      "id": "title",
+      "label": "Titel"
+    } 
+  ],
+  "blocks": [
+    {
+      "type": "type",
+      "name":"category",
+      "settings": [
+        {
+  "type": "collection",
+  "id": "collection",
+  "label": "Kategorie"
+},
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titel"
+    },
+      {
+      "type": "image_picker",
+      "id": "image",
+      "label": "PNG Overlay"
+    },
+      {
+      "type": "color",
+      "id": "color",
+      "label": "PNG Overlay",
+      "default":"#ffffff"
+    }
+        
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kategorien Section PP"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
