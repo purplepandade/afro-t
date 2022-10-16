@@ -1,0 +1,46 @@
+<style>
+#CartDrawer .customslide{
+  justify-content: space-between;
+}
+  
+</style>
+
+<div class="bestselling page-width small--hide">
+
+  <div class="butttons">
+
+    <div class="buttonsholder medium-up--hide small--show">
+
+{% render 'arrowright'  %}
+ {% render 'arrowleft' %}     
+    </div>
+  </div>
+  
+<div class="scrollable">
+
+
+{% assign count = 0 %}
+{% for product in collections['Bestsellers'].products limit:4 %}
+{% unless product.images.size ==  0  %}
+{% if count == 0 %}
+<div class="customslide">
+{% endif %}
+
+  
+  
+
+{% render 'p-card-cart',product:product %}
+
+
+{% assign count = count | plus:1 %}
+{% if count == 5 or forloop.last%}
+</div>
+{% endif %} 
+{% if count == 5 %}
+{% assign count = 0 %}
+{% endif %}
+{% endunless %}
+  {% endfor %}
+</div>
+
+</div>

@@ -1,0 +1,219 @@
+{% assign products =  product.metafields.custom.recommended_products.value %}
+<style>
+  .rec-p{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:1rem;
+  }
+
+.rp-item{
+  flex-basis:calc(25% - 1rem);
+max-width:calc(25% - 1rem);
+}
+
+.rp-img{
+  width:100%;
+  overflow:hidden;
+  text-align:center;
+}
+
+.rp-img img{
+  width:80%;
+  border-radius:20px;
+}
+
+.rp-priceholder{
+  display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.control {
+  font-family:'Inter';
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 5px;
+    padding-top: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+    .control input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+.control_indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+    border: 0px solid #000000;
+    border-radius: 2px;
+}
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+    background: #cccccc;
+}
+
+.control input:checked ~ .control_indicator {
+    background: #00533a;
+}
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+    background: #0e6647d;
+}
+.control input:disabled ~ .control_indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+.control_indicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+.control input:checked ~ .control_indicator:after {
+    display: block;
+}
+.control-checkbox .control_indicator:after {
+    left: 8px;
+    top: 4px;
+    width: 3px;
+    height: 8px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.control-checkbox input:disabled ~ .control_indicator:after {
+    border-color: #7b7b7b;
+}
+.control-checkbox .control_indicator::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-left: -1.3rem;
+    margin-top: -1.3rem;
+    background: #2aa1c0;
+    border-radius: 3rem;
+    opacity: 0.6;
+    z-index: 99999;
+    transform: scale(0);
+}
+@keyframes s-ripple {
+    0% {
+        transform: scale(0);
+    }
+    20% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+@keyframes s-ripple-dup {
+   0% {
+       transform: scale(0);
+    }
+   30% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+
+@media only screen and (max-width:768px){
+  .rec-p{
+flex-direction:column;
+    gap:1rem;
+  }
+
+.rp-item{
+  flex-basis:100%;
+max-width:100%;
+}
+
+.rp-qty .cstmqty{
+overflow:hidden!important;
+  }
+  
+}
+
+
+</style>
+
+{% if products == nil %}
+{% break %}
+{% endif %}
+
+<div class=" page-width rec-p">
+
+{% for product in products %}
+<div class="product-recommended rp-item" data-id="{{ product.first_available_variant.id }}" data-price="{{ product.price }}">
+<div class="rp-img"><img src="{{ product.featured_image | img_url: "300x" }}"></div>  
+<div class="rp-text">
+<span class="rp-title">{{ product.title }}</span>
+
+<span class="rp-grundpreis">{% render 'grundpreis',product:product %}</span>  
+
+  <div class="rp-priceholder">
+<div class="product-price">
+<span class="rp-price" style="font-weight:bold">{{ product.price | money }}</span>
+{%if product.compare_at_price > product.price%}
+<span class="pcardcompprice">{{product.compare_at_price |money}}</span>
+{%endif%}
+</div>
+
+<div class="rp-qty">{% render 'quantity-input', qty: 1, min: 1, fake:true,fkqty:true -%}</div>
+</div>
+</div>
+  
+</div>
+
+{% endfor %}
+<div class="rec-buybox rp-item">
+
+{% assign gesamt = 0 | plus: 0 %}
+{% for product in products %}
+  {% assign gesamt = gesamt | plus:product.price %}
+    <label class="control control-checkbox text-label">
+        {{ product.title }}
+            <input data-id="{{ product.first_available_variant.id }}" type="checkbox" checked="checked" />
+        <div class="control_indicator"></div>
+    </label>
+{% endfor %}
+<p>Total:</p>
+<span class="rp-gesamt">{{ gesamt | money }}</span>
+<a class="cstmbtn" data-rp-button style="text-align:center;width:100%; padding: 1rem;    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;margin-bottom:1rem ">In den Warenkorb <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+<path d="M9.99988 4.95835C10.7086 4.95835 11.2832 4.3614 11.2832 3.62502C11.2832 2.88864 10.7086 2.29169 9.99988 2.29169C9.29112 2.29169 8.71655 2.88864 8.71655 3.62502C8.71655 4.3614 9.29112 4.95835 9.99988 4.95835Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M4.0083 9.38336L8.71664 4.50836" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15.9249 9.38336L11.2166 4.50836" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M16.8415 9.575L16.3999 15.75C16.2915 16.8667 15.5332 17.7083 14.6415 17.7083H5.36654C4.47487 17.7083 3.71654 16.8667 3.6082 15.75L3.06653 9.39166" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M9.9502 12.6583V14.4333" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M6.5249 12.6583V14.4333" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M13.3749 12.6583V14.4333" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M2.29163 9.38336H17.7083" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg></a>
+  
+</div>
+
+  
+</div>

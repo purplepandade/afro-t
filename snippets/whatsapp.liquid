@@ -1,0 +1,29 @@
+<style>
+#whatsappbanner{
+ position:fixed;
+  top:50%;
+  right:0;
+  z-index:29;
+}
+
+#whatsappbanner .whatsapp{
+    flex-direction:row-reverse;
+  padding:0.5rem;
+  background:white;
+  border-radius:5px;
+}
+
+#whatsappbanner .whatsapp .whatsapp-logo{
+  width:2.5rem;
+  height:2.5rem;
+}
+  
+</style>
+
+<div id="whatsappbanner">
+<a class="whatsapp" href="https://wa.me/4915906355599">
+<div class="whatsapp-logo">
+<img src="{{ "walogo.svg" | asset_url }}">
+</div>
+</a>
+</div>

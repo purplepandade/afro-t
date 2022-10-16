@@ -1,0 +1,268 @@
+<style>
+.footercontent{
+  display:flex;
+  font-size:0.8rem;
+display:flex;
+justify-content:space-between;
+  padding-top:2rem;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.footertitlecustom{
+  font-family:"noto serif";
+  font-size:1rem;
+  font-weight:bold;
+}
+
+  
+.customcontent{
+    display:flex;
+  flex-direction:column;
+  gap:1rem;
+  flex-basis:40%;
+}
+
+.footertitle{
+      font-weight: bold;
+    font-size: 1rem;
+}
+  
+.newsletter-c{
+  flex-basis:25%;
+  gap:1rem;
+}
+
+.newsletter-c  .input-group{
+  background: #F5F5F5;
+border-radius: 8px;
+}
+
+  .newsletter-c  .input-group .input-group-field:first-child{
+    border-radius: 0;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+    border: none;
+    font-size: 0.8rem;
+}
+
+  .newsletter-c  .input-group [type=submit]{
+    border-radius: 0;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    border: none;
+    font-weight:normal;
+    letter-spacing:normal;
+    text-transform:none;
+}
+  
+.customcontent p, .newsletter-c p {
+  color: #757575;
+  margin:0;
+}
+.footerusptext{
+  color: #757575;
+}
+
+.footerusp{
+  display:flex;
+justify-content:start;
+align-items:center;
+gap:1rem;
+  margin-bottom:5px;
+}
+
+.footertoolbar{
+        display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    align-items: center;
+  }
+
+.footertoolbar > div {
+  flex-basis:33%;
+}
+
+.socials{
+display: flex;
+    align-items: center;
+    justify-content: end;
+  gap:1rem;
+}
+
+  .socials p{
+    margin:0;
+  }
+
+@media only screen and (max-width: 769px) {
+.footercontent{
+  flex-direction:column;
+  gap:2rem;
+}
+
+  .newsletter-c  .input-group{
+max-width:none;
+}
+
+  .footertoolbar{
+        flex-direction: column;
+    padding-top: 2rem;
+  }
+  
+}
+  
+  
+</style>
+
+
+<div class="customfooter">
+<div class="page-width footercontent">
+<div class="footerblock customcontent">
+
+  <div class="footertitlecustom">{{ section.settings.heading }}</div>
+<p>{{ section.settings.text }}</p>
+
+<div class="uspblock">
+<div class="footerusp"> 
+<div class="footeruspicon">
+<img src="{{ 'house-2.svg' |file_url }}">
+</div>
+<div class="footerusptext">
+{{ section.settings.address }}
+</div>
+</div>
+
+<div class="footerusp"> 
+<div class="footeruspicon">
+<img src="{{ 'Email.svg' |file_url }}">
+</div>
+<div class="footerusptext">
+{{ section.settings.maillink }}
+</div>
+</div>
+
+<div class="footerusp"> 
+<div class="footeruspicon">
+<img src="{{ 'call.svg' |file_url }}">
+</div>
+<div class="footerusptext">
+{{ section.settings.tellink }}
+</div>
+</div>
+</div>
+
+
+  
+</div>
+
+  
+{% for block in section.blocks %}
+{%case block.type%}
+  {% when 'newsletter' %}
+  <div class="footerblock newsletter-c">
+  <div class="footertitle">Newsletter</div>
+  <p class="footertext">{{ block.settings.text }}</p>
+{% render 'newsletter-form',section:section %}
+  
+  </div>
+
+{% when 'menu' %}
+<div class="footerblock menu">
+<div class="footertitle">{{ block.settings.heading }}</div>
+<ul class="no-bullets site-footer__linklist">
+          {%- for link in linklists[block.settings.menu].links -%}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {%- endfor -%}
+</ul>
+</div>
+  
+{% endcase %}
+{% endfor %}
+</div>
+<div class="page-width footertoolbar">
+  <div class="footercopy">© 2022, Afroshop Mama T Powered by Shopify </div>
+  <div class="payment-icons">
+    <ul class="inline-list payment-icons">
+          {%- for type in shop.enabled_payment_types -%}
+            <li class="icon--payment">
+              {{ type | payment_type_svg_tag }}
+            </li>
+          {%- endfor -%}
+    </ul>
+  </div>
+
+  <div class="socials"><p>Follow us:</p> <a href="https://de-de.facebook.com/afroshop.mama.t"><img class="" src="{{ 'fb.svg' |file_url }}"></a> <a href="https://www.instagram.com/afroshop.mama.t/?hl=de"><img class="" src="{{ 'insta.svg' |file_url }}"></a> </div>
+</div>  
+</div>
+
+
+{% schema %}
+  {
+    "name": "Footer by PurplePanda",
+    "max_blocks": 12,
+    "settings": [
+              {
+            "type": "text",
+            "id": "heading",
+            "label": "Überschrift"
+          },
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Fließtext"
+          },
+                  {
+            "type": "text",
+            "id": "address",
+            "label": "Adresse"
+          },
+                    {
+            "type": "text",
+            "id": "tellink",
+            "label": "Telefon (Link geht auch)"
+          },
+                          {
+            "type": "text",
+            "id": "maillink",
+            "label": "Mailto link"
+          }
+      
+    ],
+    "blocks": [
+      {
+        "type": "newsletter",
+        "name": "newsletter",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Fließtext"
+          }
+        ]
+      },
+      {
+        "type": "menu",
+        "name": "Navigation",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "title"
+          },
+          {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Choose a menu",
+            "default": "footer",
+            "info": "This menu won't show dropdown items"
+          }
+        ]
+      }
+    ],
+    "default": {
+      "settings": {},
+      "blocks": [
+      ]
+    }
+  }
+{% endschema %}

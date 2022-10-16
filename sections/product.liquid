@@ -1,0 +1,224 @@
+<style>
+.imgtext{
+  display: flex;
+    font-size: 1.2rem;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  margin:2rem auto;
+}
+
+  .imgtext > div {
+    flex-basis:calc(50% - 2rem);
+  }
+
+  .reverse{
+    flex-direction:row-reverse;
+  }
+
+@media only screen and (max-width: 769px) {
+ .imgtext{
+   flex-direction:column;
+ } 
+  .imgtext > div {
+    flex-basis:100%;
+  }
+
+  .reverse{
+   flex-direction:column; 
+  }
+}
+
+  #shopify-section-{{ section.id }} iframe{
+      width: 100%;
+    height: 40vh;
+}
+
+  #shopify-section-{{ section.id }} .iframe{
+      width: 100%;
+    flex-direction:column;
+}
+
+
+
+    #shopify-section-{{ section.id }} .iframe .left{
+      width: 80%;
+}
+
+    #shopify-section-{{ section.id }} .iframe .right{
+      width: 80%;
+      text-align:center;
+}
+  
+</style>
+
+<div class="page-width" style="margin-top:2rem;">
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">FAQ</a></li>
+    <li><a href="#tabs-2">Beschreibung</a></li>
+    <li><a href="#tabs-3">Reviews</a></li>
+    
+  </ul>
+
+  
+  <div id="tabs-2">
+{% for block in section.blocks %}
+  {% case block.type %}
+
+{% when 'frozen' %}
+  {% if product.metafields.custom.frozen %}
+        <div class="imgtext iframe {% if block.settings.reverse %}reverse{% endif %}">
+<div class="left"><iframe
+src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe></div>
+
+    <div class="right">
+   <span class="h1" style="font-size:2rem"> {{block.settings.heading}} </span>
+    <br>
+    {{ block.settings.text }}
+  
+    </div>
+      
+    </div>
+{% endif %}  
+    {% when 'text' %}
+{{ block.settings.text }}
+    {% when 'imgtext' %}
+    <div class="imgtext {% if block.settings.reverse %}reverse{% endif %}">
+<div class="left"><img src="{{ block.settings.image | img_url:"master" }}" class="imgleft"></div>
+
+    <div class="right">
+   <span class="h1 product-single__title" style="font-size:2rem"> {{block.settings.heading}} </span>
+    <br>
+    {{ block.settings.text }}
+    
+    </div>
+      
+    </div>
+  {% endcase %}
+    {% endfor %}
+  </div>
+    
+  <div id="tabs-3">
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when '@app' %}
+{% render block %}
+  {% endcase %}
+    {% endfor %}
+    
+  </div>
+
+<div id="tabs-1">
+    {{ section.settings.faq }}
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'faq' %}
+<div class="faq"> 
+<div class="faq-title" style="font-weight:bold;">{{ block.settings.heading }} <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg></div>
+<div class="faq-content" style="display:none;">{{ block.settings.text }}</div>
+</div>
+  {% endcase %}
+    {% endfor %}
+  </div>
+
+  
+</div>
+</div>
+{% schema %}
+{
+  "name": "Produkttabs | PP",
+  
+  "settings": [
+         {
+            "type": "text",
+            "id": "faqh",
+            "label": "faq heading"
+          }
+  ],
+  "blocks": [{
+        "type": "text",
+        "name": "text",
+        "settings": [
+     {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      },
+          {
+        "type": "@app"
+      },
+    {
+        "type": "imgtext",
+        "name": "imgtext",
+        "settings": [
+           {
+            "type":"image_picker",
+            "id": "image",
+            "label": "bild"
+          },{
+            "type":"text",
+            "id": "heading",
+            "label": "überschirft"
+          },
+     {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          },
+               {
+            "type": "checkbox",
+            "id": "reverse",
+            "label": "reverse"
+          }
+        ]
+      },
+        {
+        "type": "faq",
+        "name": "faq",
+        "settings": [{
+            "type":"text",
+            "id": "heading",
+            "label": "überschirft"
+          },
+     {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      },
+        {
+        "type": "frozen",
+        "name": "frozen",
+        "settings": [
+          {
+            "type":"text",
+            "id": "heading",
+            "label": "überschirft"
+          },
+     {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "Tabs | PurplePanda"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,112 @@
+<style>
+#shopify-section-{{ section.id }} .imgtext{
+  display: flex;
+  flex-direction:column;
+    font-size: 1.2rem;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  margin:2rem auto;
+  text-align:center;
+  width:70%;
+}
+
+#shopify-section-{{ section.id }}   .imgtext > div {
+    flex-basis:calc(50% - 2rem);
+  }
+
+ #shopify-section-{{ section.id }}  .reverse{
+    flex-direction:column-reverse;
+  }
+
+@media only screen and (max-width: 769px) {
+#shopify-section-{{ section.id }}  .imgtext{
+   width:100%;
+  
+ } 
+#shopify-section-{{ section.id }}   .imgtext > div {
+    flex-basis:100%;
+  }
+
+#shopify-section-{{ section.id }}   .reverse{
+   flex-direction:column; 
+  }
+}
+  
+</style>
+
+<div class="page-width">
+    <div class="imgtext {% if section.settings.reverse %}reverse{% endif %}">
+<div class="left">
+  {%- assign img_url = section.settings.img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+  
+  <img src="" 
+    class="imgleft lazyload"
+    data-src="{{ img_url }}"
+    data-aspectratio="{{ section.settings.img.aspect_ratio }}"
+    data-widths="[220, 300, 480, 600, 800]"
+    data-sizes="auto"
+    >
+
+
+</div>
+
+    <div class="right">
+   <span class="h1" style="font-size:2rem"> {{section.settings.title}} </span>
+    <div class="payment-icons">
+
+                   <ul class="inline-list payment-icons footer__section">
+          {%- for type in shop.enabled_payment_types -%}
+            <li class="icon--payment">
+              {{ type | payment_type_svg_tag }}
+            </li>
+          {%- endfor -%}
+        </ul>
+      
+    </div>
+    <br>
+    {{ section.settings.text }}
+    
+    </div>
+      
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Fleximg",
+    "settings": [
+    {
+  "type": "image_picker",
+  "id": "img",
+  "label": "Bild"
+  },
+    {
+  "type": "text",
+  "id": "title",
+  "label": "Titel"
+  },
+    {
+  "type": "textarea",
+  "id": "text",
+  "label": "Fließtext"
+  },
+      {
+  "type": "checkbox",
+  "id": "reverse",
+  "label": "Umkehren"
+  }
+    ],
+    "presets": [
+    {
+      "name": "IMG TEXT Column with Paymenticons | PurplePandaMedia"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

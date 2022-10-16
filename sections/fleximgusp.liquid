@@ -1,0 +1,167 @@
+
+<style>
+#shopify-section-{{ section.id }} .imgtext{
+  display: flex;
+    font-size: 1.2rem;
+    gap: 2rem;
+    justify-content: center;
+  margin:2rem auto;
+}
+
+#shopify-section-{{ section.id }}   .imgtext > div {
+    flex-basis:calc(45% - 2rem);
+  }
+
+#shopify-section-{{ section.id }}   .imgtext > div:last-child {
+    flex-basis:calc(55% - 2rem);
+  }
+
+#shopify-section-{{ section.id }} .right .trustbadges{
+  flex-direction:column;
+  margin:0;
+}
+
+#shopify-section-{{ section.id }} .right .trustbadges .badge{
+  width:100%;
+}
+  #shopify-section-{{ section.id }} .right .trustbadges .badge .badge-img{
+  width:auto;
+}
+  
+ #shopify-section-{{ section.id }}  .reverse{
+    flex-direction:row-reverse;
+  }
+
+
+  
+@media only screen and (max-width: 769px) {
+#shopify-section-{{ section.id }}  .imgtext{
+   flex-direction:column;
+ } 
+#shopify-section-{{ section.id }}   .imgtext > div {
+    flex-basis:100%;
+  }
+
+#shopify-section-{{ section.id }}   .reverse{
+   flex-direction:column; 
+  }
+
+  #shopify-section-{{ section.id }} .right .trustbadges .badge-txt{
+  text-align:left;
+}
+
+  #shopify-section-{{ section.id }} .right .trustbadges .badge .badge-img{
+  width:20%;
+}
+  
+}
+  
+</style>
+
+<div class="page-width">
+    <div class="imgtext">
+<div class="left">
+  {%- assign img_url = section.settings.img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+  
+  <img src="" 
+    class="imgleft lazyload"
+    data-src="{{ img_url }}"
+    data-aspectratio="{{ section.settings.img.aspect_ratio }}"
+    data-widths="[220, 300, 480, 600, 800]"
+    data-sizes="auto"
+    >
+
+</div>
+
+    <div class="right">
+   <span class="h1" style="font-size:2rem"> {{section.settings.title}} </span>
+    <br>
+    {{ section.settings.text }}
+
+<div class="trustbadges">
+
+<div class="badge">
+<div class="badge-img"><img class="lazyload" src="//cdn.shopify.com/s/files/1/0549/3302/9099/files/shield-tick_200x.png?v=1660154416"></div>
+<div class="badge-txt">
+<div class="badgeh2">
+<strong>Frische Garantie</strong>
+</div>
+
+<div class="badgesub">
+Geld-zurück-Garantie bei schlechter Ware
+</div>
+
+</div>
+</div>
+
+
+
+<div class="badge">
+<div class="badge-img"><img src="//cdn.shopify.com/s/files/1/0549/3302/9099/files/group_Kopie_200x.png?v=1660154318"></div>
+<div class="badge-txt">
+<div class="badgeh2">
+<strong>Kostenloser Versand</strong>
+</div>
+
+<div class="badgesub">
+Ab einem Bestellwert von 49 EUR
+</div>
+
+</div>
+</div>
+
+<div class="badge">
+<div class="badge-img"><img src="//cdn.shopify.com/s/files/1/0549/3302/9099/files/flash_200x.png?v=1660154539"></div>
+<div class="badge-txt">
+<div class="badgeh2">
+<strong>Tägliche Angebote</strong>
+</div>
+
+<div class="badgesub">
+Bis zu 50% sparen
+</div>
+
+</div>
+</div>
+
+
+</div>
+      
+    </div>
+      
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Fleximg",
+    "settings": [
+    {
+  "type": "image_picker",
+  "id": "img",
+  "label": "Bild"
+  },
+    {
+  "type": "text",
+  "id": "title",
+  "label": "Titel"
+  },
+    {
+  "type": "textarea",
+  "id": "text",
+  "label": "Fließtext"
+  }
+    ],
+    "presets": [
+    {
+      "name": "IMG TEXT With USPS| PurplePandaMedia"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

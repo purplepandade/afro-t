@@ -1,0 +1,17 @@
+{% if content_for_header contains 'shopifyorderlimits.s3.amazonaws.com' %}
+{% if shop.permanent_domain == 'mama-t-o.myshopify.com' %}
+<script type="text/javascript">
+minMaxifyContext={
+  cartItemExtras: [
+  {%- for item in cart.items -%}
+  { "id": {{ item.id }}, "product_id": {{ item.product_id }}, "collection": {{ item.product.collections | map: 'id' | json }}, "tag": {{ item.product.tags | json }} }{% unless forloop.last == true %},{% endunless %}
+  {%- endfor -%}
+]
+};
+{% if template contains 'product' %}
+minMaxifyContext.product = { "product_id": {{ product.id }}, "collection": {{ product.collections | map: 'id' | json }}, "tag": {{ product.tags | json }} };
+{% endif%}</script><script src="https://shopifyorderlimits.s3.amazonaws.com/limits/mama-t-o.myshopify.com?v=86&r=20220525053445&shop=mama-t-o.myshopify.com"></script>
+{% endif %}
+{% else %}
+<script type="text/javascript">console.error("MinMaxify is deactivated for this website. Please don't forget to remove minmaxify-head.liquid still being referenced by theme.liquid")</script>
+{% endif %}

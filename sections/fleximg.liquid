@@ -1,0 +1,104 @@
+
+<style>
+#shopify-section-{{ section.id }} .imgtext{
+  display: flex;
+    font-size: 1.2rem;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  margin:2rem auto;
+}
+
+#shopify-section-{{ section.id }}   .imgtext > div {
+    flex-basis:calc(50% - 2rem);
+  }
+
+ #shopify-section-{{ section.id }}  .reverse{
+    flex-direction:row-reverse;
+  }
+
+@media only screen and (max-width: 769px) {
+#shopify-section-{{ section.id }}  .imgtext{
+   flex-direction:column;
+ } 
+#shopify-section-{{ section.id }}   .imgtext > div {
+    flex-basis:100%;
+  }
+
+#shopify-section-{{ section.id }}   .reverse{
+   flex-direction:column; 
+  }
+}
+  
+</style>
+
+<div class="page-width {% if section.settings.hidemobile %}small--hide{% endif %}">
+    <div class="imgtext {% if section.settings.reverse %}reverse{% endif %}">
+<div class="left">
+  {%- assign img_url = section.settings.img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+  
+  <img src="" 
+    class="imgleft lazyload"
+    data-src="{{ img_url }}"
+    data-aspectratio="{{ section.settings.img.aspect_ratio }}"
+    data-widths="[220, 300, 480, 600, 800]"
+    data-sizes="auto"
+    >
+
+</div>
+    
+
+    <div class="right">
+   <span class="h1" style="font-size:2rem"> {{section.settings.title}} </span>
+    <br>
+    {{ section.settings.text }}
+    
+    </div>
+      
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Fleximg",
+    "settings": [
+    {
+  "type": "checkbox",
+  "id": "hidemobile",
+  "label": "Auf Mobil ausblenden",
+  "default": false
+  },
+    {
+  "type": "image_picker",
+  "id": "img",
+  "label": "Bild"
+  },
+    {
+  "type": "text",
+  "id": "title",
+  "label": "Titel"
+  },
+    {
+  "type": "textarea",
+  "id": "text",
+  "label": "Fließtext"
+  },
+      {
+  "type": "checkbox",
+  "id": "reverse",
+  "label": "Umkehren"
+  }
+    ],
+    "presets": [
+    {
+      "name": "IMG TEXT | PurplePandaMedia"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

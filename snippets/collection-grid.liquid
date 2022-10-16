@@ -1,0 +1,166 @@
+{% comment %}
+Snippet Arguments
+- collection: Liquid 'collection' or 'search' object
+- items: Paginated 'collection.products' or 'search.results' list. Cannot be pulled from the the 'collection' object passed in above
+- enable_sidebar: boolean
+- filter_style: 'sidebar' or 'drawer'
+- enable_sort: boolean
+- enable_collection_count
+- per_row
+- mobile_flush_grid
+- quick_shop_enable
+{% endcomment %}
+
+{% liquid
+  if collection.products
+    assign count = collection.products_count
+    assign count_label = 'collections.general.items_with_count'
+  endif
+
+  if collection.results
+    assign count = collection.results_count
+    assign count_label = 'general.search.result_count'
+  endif
+
+  assign filters = collection.filters
+  assign sort_by = collection.sort_by
+  assign default_sort_by = collection.default_sort_by
+  assign sort_options = collection.sort_options
+  assign current_filter_size = 0
+
+  for filter in filters
+    assign current_filter_size = current_filter_size | plus: filter.active_values.size
+  endfor
+%}
+
+<div class="collection-grid__wrapper">
+  <div class="collection-filter">
+    <div class="collection-filter__item collection-filter__item--drawer">
+      <button
+        type="button"
+        class="js-drawer-open-collection-filters btn btn--tertiary{% unless current_filter_size == 0 %} btn--tertiary-active{% endunless %}"
+        aria-controls="FilterDrawer">
+          <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.3125 13.4375H3.875" stroke="#5C5F62" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.625 13.4375H15.4375" stroke="#5C5F62" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.875 15C14.7379 15 15.4375 14.3004 15.4375 13.4375C15.4375 12.5746 14.7379 11.875 13.875 11.875C13.0121 11.875 12.3125 12.5746 12.3125 13.4375C12.3125 14.3004 13.0121 15 13.875 15Z" stroke="#5C5F62" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.3125 6.5625H3.875" stroke="#5C5F62" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.625 6.5625H10.4375" stroke="#5C5F62" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.875 8.125C9.73794 8.125 10.4375 7.42544 10.4375 6.5625C10.4375 5.69956 9.73794 5 8.875 5C8.01206 5 7.3125 5.69956 7.3125 6.5625C7.3125 7.42544 8.01206 8.125 8.875 8.125Z" stroke="#5C5F62" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+          {{ 'collections.filters.title_tags' | t }}
+          {%- if current_filter_size > 0 -%}
+              ({{ current_filter_size }})
+          {%- endif -%}
+      </button>
+    </div>
+
+    <div class="collection-filter__item collection-filter__item--count small--hide">
+      {%- if enable_collection_count -%}
+        {{ count_label | t: count: count }}
+      {%- endif -%}
+    </div>
+
+    <div class="collection-filter__item collection-filter__item--sort sortby">
+                  
+      <div class="collection-filter__sort-container" style="position:relative;">
+
+        {%- assign sort_by = sort_by | default: default_sort_by -%}
+        <label for="SortBy" class="hidden-label">{{ 'collections.sorting.title' | t }}</label>
+
+      <button
+        type="button"
+        class="btn btn--tertiary"
+        aria-controls="FilterDrawer"
+        style="display:none;position:absolute;top:0;bottom:0;left:0;right:0;display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;">
+          <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.3125 13.4375H3.875" stroke="#5C5F62" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.625 13.4375H15.4375" stroke="#5C5F62" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.875 15C14.7379 15 15.4375 14.3004 15.4375 13.4375C15.4375 12.5746 14.7379 11.875 13.875 11.875C13.0121 11.875 12.3125 12.5746 12.3125 13.4375C12.3125 14.3004 13.0121 15 13.875 15Z" stroke="#5C5F62" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.3125 6.5625H3.875" stroke="#5C5F62" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.625 6.5625H10.4375" stroke="#5C5F62" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.875 8.125C9.73794 8.125 10.4375 7.42544 10.4375 6.5625C10.4375 5.69956 9.73794 5 8.875 5C8.01206 5 7.3125 5.69956 7.3125 6.5625C7.3125 7.42544 8.01206 8.125 8.875 8.125Z" stroke="#5C5F62" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+  <span data-filterbutton>Sortieren</span>
+
+      </button>
+        
+          <select name="SortBy" id="SortBy" data-default-sortby="{{ default_sort_by }}">
+          <option value="title-ascending"{% if sort_by == default_sort_by %} selected="selected"{% endif %}>{{ 'collections.sorting.title' | t }}</option>
+          {%- for option in sort_options -%}
+          <option value="{{ option.value }}"{% if option.value == sort_by %} selected="selected"{% endif %}>{{ option.name }}</option>
+          {%- endfor -%}
+        </select>
+        </div>
+    </div>
+  </div>
+
+  <div class="grid grid--uniform{% if mobile_flush_grid %} small--grid--flush{% endif %}"{% unless enable_collection_count %} data-scroll-to{% endunless %}>
+    {%- for item in items -%}
+      {%- if item.object_type == 'product' -%}
+        
+        {% render 'p-card', product:item %}
+        {% comment %}
+        {%- render 'product-grid-item',
+          product: item,
+          per_row: per_row,
+          quick_shop_enable: quick_shop_enable
+        -%}
+        {% endcomment %}
+      {%- else -%}
+        {%- render 'search-grid-item',
+          item: item,
+          per_row: per_row
+        %}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{%- if enable_sidebar and filter_style != 'drawer' and collection.filters.size > 0 -%}
+{% comment %}
+  Sidebar enabled but not in drawer mode, only show filter button on mobile
+{% endcomment %}
+{% style %}
+@media screen and (min-width: 769px) {
+  .collection-filter__item--drawer {
+    display: none;
+  }
+  .collection-filter__item--count {
+    text-align: left;
+  }
+  html[dir="rtl"] .collection-filter__item--count {
+    text-align: right;
+  }
+}
+{% endstyle %}
+{%- endif -%}
+
+{%- if enable_sidebar == false or collection.filters.size == 0 -%}
+{% comment %}
+    Disable sidebar & filter features
+{% endcomment %}
+{% style %}
+.collection-filter__item--drawer {
+  display: none;
+}
+.collection-filter__item--count {
+  text-align: left;
+}
+html[dir="rtl"] .collection-filter__item--count {
+  text-align: right;
+}
+{% endstyle %}
+{%- endif -%}
+
+{%- unless enable_sort -%}
+{% style %}
+.collection-filter__sort-container {
+  display: none;
+}
+{% endstyle %}
+{%- endunless -%}

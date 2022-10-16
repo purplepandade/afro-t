@@ -1,0 +1,32 @@
+
+
+.template-login input{
+  border: 1px solid #C9CCCF;
+border-radius: 4px;
+}
+
+.template-login button[type=submit]{
+  background:green;
+}
+
+.template-login .logincont{
+  display:flex;
+  flex-direction:row;
+}
+
+.template-login  .rechts {
+    padding-left: 10%;
+  }
+
+  @media only screen and (max-width: 768px) {
+.template-login .logincont{
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:1.5rem;
+}
+
+.template-login .rechts {
+    padding-left: 0%;
+  }
+}

@@ -1,0 +1,3 @@
+{% if product.metafields.custom.einheitsgrosse %}
+<div class="einheit">{{ product.metafields.custom.einheitsgrosse | split: "/" | first | replace: "gr","g" }}</div>
+  {% endif %}

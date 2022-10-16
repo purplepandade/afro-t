@@ -1,0 +1,32 @@
+<div  class="greenbg collection-sidebar-2">
+<span class="kat">Kategorie</span>
+<div class="katdiv"></div>
+<div class="collection-sidebar__group">
+
+{% for link in linklists.sidebarmenu.links %}
+  {% assign count =  forloop.index|append:filter%}
+<button type="button" class="collapsible-trigger collapsible-trigger-btn collapsible--auto-height tag-list__header" aria-controls="linklist-{{ count }}" data-collapsible-id="linklist-{{ count }}" aria-expanded="false">
+<span class="kat">{{ link.title }}</span>
+<span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16">{% if forloop.first == false %}<path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg>{% endif %}
+</span>
+</button>
+{% if link.links != blank %}
+        <div id="linklist-{{ count }}" class="collapsible-content collapsible-content--sidebar" data-collapsible-id="linklist-{{ count }}" style="">
+        <div class="collapsible-content__inner">
+          <ul class="no-bullets">
+{% for child_link in link.links%}
+<li class="tag2">
+<a class="tag__text2" href="{{ child_link.url }}">{{ child_link.title }}</span></a>
+</li>
+        
+
+{% endfor %}
+</ul>
+        </div>
+      </div>
+  {% endif %}
+{% endfor %}
+
+</div>
+</div>
