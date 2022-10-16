@@ -1,32 +1,60 @@
-<div class="bestselling page-width">
+<div class="bestselling page-width small--hide">
 
-  <div class="butttons"> </div>
+  <div class="butttons">
+
+    <div class="buttonsholder">
+
+{% render 'arrowright'  %}
+ {% render 'arrowleft' %}     
+    </div>
+  </div>
   
-  <div class="scrollable">
+<div class="scrollable">
 
 
 {% assign count = 0 %}
-{% for product in collections['Bestsellers'].products limit:10 %}
-{% if count == 0 %}
+{% for product in collections['Bestsellers'].products limit:12 %}
+{% unless product.images.size ==  0  %}
+  {% if count == 0 %}
 <div class="customslide">
 {% endif %}
 
   
-  
+
 {% render 'p-card',product:product %}
 
 
 {% assign count = count | plus:1 %}
-{% if count == 5 %}
+{% if count == 5 or forloop.last%}
 </div>
 {% endif %} 
 {% if count == 5 %}
 {% assign count = 0 %}
 {% endif %}
+{% endunless %}
   {% endfor %}
 </div>
+
+</div>
+<div class="bestselling page-width medium-up--hide small--show">
+  <div class="butttons">
+
+    <div class="buttonsholder">
+
+{% render 'arrowright'  %}
+ {% render 'arrowleft' %}     
+    </div>
+  </div>
+  
+  <div class="scrollable">
+{% for product in collections['Bestsellers'].products limit:12 %}
+{% unless product.images.size ==  0  %}
+{% render 'p-card',product:product %}
+{% endunless %}
+  {% endfor %}
 </div>
 
+</div>
 
 {% schema %}
 {

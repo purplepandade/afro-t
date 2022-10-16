@@ -9,13 +9,8 @@
 <div class="pholder" style="">
 <a href="{{ product.url }}" class="pimage"> 
 {%- assign img_url = product.images[0] | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-<img class="animateimg lazyload" 
-  src="{{ product.images[0] | img_url:"50x",scale:3 }}"
-  data-src="{{ img_url }}"
-  data-aspectratio="1"
-  data-widths="[50,100,150]"
-  data-sizes="auto"
-  >
+<img class="animateimg" 
+  src="{{ product.images[0] | img_url:"50x",scale:3 }}">
 </a>
 <div  class="pcardtxt">
 <a class="pcardtitle" href="{{ product.url }}">{{ product.title }}</a>

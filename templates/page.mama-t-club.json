@@ -1,1 +1,111 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{}},"1663677162a30a406b":{"type":"banner-section","blocks":{"9bd69bf6-f7f3-417e-af87-69ee609242bc":{"type":"type","settings":{"bg":"shopify:\/\/shop_images\/Hblock1.png","title":"<b>Werde Member im Mama T Club & erhalte 20% Rabatt<\/b>","p":"Erhalte exclusive Deals, Rabattaktionen, Rezepte und vieles mehr!","url":"","urltext":"Mitglied werden","bgcolor":"#d5dee5","fullw":true}},"ab4f9eaf-d0e6-47aa-a95e-6809e8bdd075":{"type":"type","disabled":true,"settings":{"title":"","p":"","url":"","urltext":"","bgcolor":"#ffffff","fullw":false}}},"block_order":["9bd69bf6-f7f3-417e-af87-69ee609242bc","ab4f9eaf-d0e6-47aa-a95e-6809e8bdd075"],"settings":{"bg":"shopify:\/\/shop_images\/SliderBG.png","bgcolor":"#ffffff"}},"1663677613bcfe2745":{"type":"apps","blocks":{"1d2fbc65-a2e6-4fb7-827d-bbac077d1932":{"type":"shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507","settings":{"formId":"Xb2vqn"}}},"block_order":["1d2fbc65-a2e6-4fb7-827d-bbac077d1932"],"settings":{"full_width":false,"space_around":true}},"1663677167935099b3":{"type":"faqcustom","blocks":{"72bcbe25-71c5-4fd0-b338-5f13a9db5d34":{"type":"faq","settings":{"heading":"<b>Welche Vorteile erhalte ich als Mitglied?<\/b>","text":"<p>Du kriegst Zugang zu exklusive Deals und Rabatte. Wir senden dir Rezepte zum Nachkochen, sowie Einblick hinter den Kulissen von Mama T.<\/p>"}},"cb0d26eb-ef0a-4a50-85e6-24f3f831183d":{"type":"faq","settings":{"heading":"<b>Wie oft erhalte ich eine Mail bzw. Whatsapp Nachricht von euch? <b><\/b><\/b>","text":""}},"34090d50-895f-4cee-9777-895526eaaffa":{"type":"faq","settings":{"heading":"<b>Wie lange ist der 20% Rabatt gültig?<\/b>","text":""}},"1a4e81ef-b8ed-4115-9ad7-cd33a2ba4a37":{"type":"faq","settings":{"heading":"<b>Kann ich Benachrichtigungen über Email & Whatsapp erhalten?<b><\/b><\/b>","text":""}}},"block_order":["72bcbe25-71c5-4fd0-b338-5f13a9db5d34","cb0d26eb-ef0a-4a50-85e6-24f3f831183d","34090d50-895f-4cee-9777-895526eaaffa","1a4e81ef-b8ed-4115-9ad7-cd33a2ba4a37"],"settings":{"faqh":""}}},"order":["main","1663677162a30a406b","1663677613bcfe2745","1663677167935099b3"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1663677162a30a406b": {
+      "type": "banner-section",
+      "blocks": {
+        "9bd69bf6-f7f3-417e-af87-69ee609242bc": {
+          "type": "type",
+          "settings": {
+            "bg": "shopify:\/\/shop_images\/Hblock1.png",
+            "title": "<b>Werde Member im Mama T Club & erhalte 20% Rabatt<\/b>",
+            "p": "Erhalte exclusive Deals, Rabattaktionen, Rezepte und vieles mehr!",
+            "url": "",
+            "urltext": "Mitglied werden",
+            "bgcolor": "#d5dee5"
+          }
+        },
+        "ab4f9eaf-d0e6-47aa-a95e-6809e8bdd075": {
+          "type": "type",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "p": "",
+            "url": "",
+            "urltext": "",
+            "bgcolor": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "9bd69bf6-f7f3-417e-af87-69ee609242bc",
+        "ab4f9eaf-d0e6-47aa-a95e-6809e8bdd075"
+      ],
+      "settings": {
+        "bg": "shopify:\/\/shop_images\/SliderBG.png",
+        "bgcolor": "#ffffff"
+      }
+    },
+    "1663677613bcfe2745": {
+      "type": "apps",
+      "blocks": {
+        "1d2fbc65-a2e6-4fb7-827d-bbac077d1932": {
+          "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507",
+          "settings": {
+            "formId": "Xb2vqn"
+          }
+        }
+      },
+      "block_order": [
+        "1d2fbc65-a2e6-4fb7-827d-bbac077d1932"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "1663677167935099b3": {
+      "type": "faqcustom",
+      "blocks": {
+        "72bcbe25-71c5-4fd0-b338-5f13a9db5d34": {
+          "type": "faq",
+          "settings": {
+            "heading": "<b>Welche Vorteile erhalte ich als Mitglied?<\/b>",
+            "text": "<p>Du kriegst Zugang zu exklusive Deals und Rabatte. Wir senden dir Rezepte zum Nachkochen, sowie Einblick hinter den Kulissen von Mama T.<\/p>"
+          }
+        },
+        "cb0d26eb-ef0a-4a50-85e6-24f3f831183d": {
+          "type": "faq",
+          "settings": {
+            "heading": "<b>Wie oft erhalte ich eine Mail bzw. Whatsapp Nachricht von euch? <b><\/b><\/b>",
+            "text": ""
+          }
+        },
+        "34090d50-895f-4cee-9777-895526eaaffa": {
+          "type": "faq",
+          "settings": {
+            "heading": "<b>Wie lange ist der 20% Rabatt gültig?<\/b>",
+            "text": ""
+          }
+        },
+        "1a4e81ef-b8ed-4115-9ad7-cd33a2ba4a37": {
+          "type": "faq",
+          "settings": {
+            "heading": "<b>Kann ich Benachrichtigungen über Email & Whatsapp erhalten?<b><\/b><\/b>",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "72bcbe25-71c5-4fd0-b338-5f13a9db5d34",
+        "cb0d26eb-ef0a-4a50-85e6-24f3f831183d",
+        "34090d50-895f-4cee-9777-895526eaaffa",
+        "1a4e81ef-b8ed-4115-9ad7-cd33a2ba4a37"
+      ],
+      "settings": {
+        "faqh": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1663677162a30a406b",
+    "1663677613bcfe2745",
+    "1663677167935099b3"
+  ]
+}

@@ -1,4 +1,4 @@
-<div class="js-qty__wrapper">
+<div class="js-qty__wrapper {% if fkqty %}cstmqty{% endif %}" {% if fake %}data-fqty{% endif %} >
   <input type="text" id="Quantity-{{ id }}"
     class="js-qty__num"
     value="{{ qty }}"

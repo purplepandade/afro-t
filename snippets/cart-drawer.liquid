@@ -3,16 +3,21 @@
     <form id="CartDrawerForm" action="{{ routes.cart_url }}" method="post" novalidate class="drawer__contents">
       <div class="drawer__fixed-header">
         <div class="drawer__header appear-animation appear-delay-1">
-          <div class="h2 drawer__title">{{ 'cart.general.title' | t }}</div>
+          <div class="h2 drawer__title ">{{ 'cart.general.title' | t }}</div>
+
+          
           <div class="drawer__close">
             <button type="button" class="drawer__close-button js-drawer-close">
               <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
               <span class="icon__fallback-text">{{ 'cart.general.close_cart' | t }}</span>
             </button>
           </div>
+        
         </div>
       </div>
-
+  <div class="" style="margin:0 auto">
+{% render 'freeshipping' %}
+  </div>
       <div class="drawer__inner">
         <div class="drawer__scrollable">
           <div data-products class="appear-animation appear-delay-2"></div>
@@ -45,13 +50,14 @@
             <div class="ajaxcart__subtotal">{{ 'cart.general.subtotal' | t }}</div>
             <div data-subtotal>{{ cart.total_price | money }}</div>
           </div>
-
-          <div class="cart__item-row text-center">
-            <small>
-              {{ 'cart.general.shipping_at_checkout' | t }}<br />
-            </small>
-          </div>
-
+{% render 'stars' %}
+  {% paginate collections["all"].products by 10000 %}
+{% for product in collections['all'].products  %}
+  {% if product.id ==  7429582684395%}
+{% render 'cartrecs' %}
+{% endif %}
+        {% endfor %}
+  {% endpaginate %}
           {% if settings.cart_terms_conditions_enable %}
             <div class="cart__item-row cart__terms">
               <input type="checkbox" id="CartTermsDrawer" class="cart__terms-checkbox">
@@ -69,6 +75,14 @@
             <button type="submit" name="checkout" data-terms-required="{{ settings.cart_terms_conditions_enable }}" class="btn cart__checkout">
               {{ 'cart.general.checkout' | t }}
             </button>
+
+                         <ul class="inline-list payment-icons footer__section">
+          {%- for type in shop.enabled_payment_types -%}
+            <li class="icon--payment">
+              {{ type | payment_type_svg_tag }}
+            </li>
+          {%- endfor -%}
+        </ul>
 
             {% if additional_checkout_buttons and settings.cart_additional_buttons %}
               <div class="additional-checkout-buttons additional-checkout-buttons--vertical">{{ content_for_additional_checkout_buttons }}</div>

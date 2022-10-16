@@ -191,7 +191,7 @@
                   <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"/></svg>
                   <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
                 </button>
-                <input type="search" name="q" value="{{ search.terms | escape | replace: '*', '' }}" placeholder="{{ 'general.search.placeholder' | t }}" class="site-header__search-input" aria-label="{{ 'general.search.placeholder' | t }}">
+                <input type="search" name="q" value="{{ search.terms | escape | replace: '*', '' }}" placeholder="{{ 'general.search.placeholder' | t }}" class="ttextinput" aria-label="{{ 'general.search.placeholder' | t }}">
               </form>
               <button type="button" id="SearchClose" class="js-search-header-close text-link site-header__search-btn">
                 <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
@@ -199,22 +199,20 @@
               </button>
             </div>
           </div>
+                          
           {%- if settings.predictive_search_enabled -%}
             <div id="PredictiveWrapper" class="predictive-results hide" data-image-size="{{ settings.predictive_image_size }}">
               <div class="page-width">
                 <div id="PredictiveResults" class="predictive-result__layout"></div>
-                <div class="text-center predictive-results__footer">
-                  <button type="button" class="btn btn--small" data-predictive-search-button>
-                    <small>
-                      {{ 'general.search.view_more' | t }}
-                    </small>
-                  </button>
-                </div>
               </div>
             </div>
           {%- endif -%}
         </div>
+    <div class="medium-up--hide" id="stickyy"><div class="freeshipping">{% render 'bluetruck' %} Kostenloser  Versand ab {{ settings.freeshipping }} EUR</div>
+    </div>
+                
       </header>
+
     </div>
   </div>
 

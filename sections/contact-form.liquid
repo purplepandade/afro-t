@@ -1,5 +1,41 @@
+<style>
+.flexcontact{
+  display:flex;
+  gap:2rem;
+}
+
+.flexleft{
+  font-size:1.2rem;
+}
+
+.flexright{
+  font-size:1.2rem;
+  flex-basis: calc(35% - 2rem);
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+
+.adressblock .h4{
+  font-family:var(--typeHeaderPrimary),var(--typeHeaderFallback)
+}
+
+@media only screen and (max-width: 769px) {
+.flexcontact{
+  flex-direction:column;
+}
+.flexright{
+
+}
+  
+}
+
+  
+</style>
+
 <div class="index-section">
-  <div class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %}">
+  <div class="page-width{% if section.settings.narrow_column %} page-width--narrow{% endif %} flexcontact">
+<div class="flexleft">
     {%- if section.settings.title != blank -%}
       <div class="section-header">
         <h2 class="section-header__title">
@@ -58,8 +94,36 @@
       {%- endform -%}
     </div>
   </div>
+<div class="flexright">
+<div class="adressblock">
+  <h4 class="h4">Addresse</h4>
+  <p>Berliner Platz 13a, 22045 Hamburg</p>
 </div>
 
+<div class="adressblock">
+  <h4 class="h4">Information</h4>
+  <p><a href="mailto:info@mama-t.de">info@mama-t.de</a></p>
+
+  <p><a href="tel:0049159006355599">
+01590 063 555 99</a></p>
+</div>
+
+<div class="adressblock">
+  <h4 class="h4">Öffnungszeiten</h4>
+  <p>Montags-Freitags: <b>12:00 - 20:00</b></p>
+  <p>Samstags: <b>10:00 - 17:30</b></p>
+</div>
+
+<div class="adressblock">
+  <h4 class="h4">Social Media</h4>
+<div class="socials" style="justify-content:start"><a href="https://de-de.facebook.com/afroshop.mama.t"><img class="" src="//cdn.shopify.com/s/files/1/0549/3302/9099/files/fb.svg?v=14751765340707841566"></a> <a href="https://www.instagram.com/afroshop.mama.t/?hl=de"><img class="" src="//cdn.shopify.com/s/files/1/0549/3302/9099/files/insta.svg?v=14431965350090513489"></a> </div>
+</div>
+  
+</div>
+
+    
+</div>
+</div>
 {% schema %}
   {
     "name": "Contact form",

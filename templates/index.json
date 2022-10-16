@@ -1,1 +1,375 @@
-{"sections":{"1659357211a616fa65":{"type":"banner-section","blocks":{"8a9764a4-f4a2-47e8-81cb-42457aa7b1ad":{"type":"type","settings":{"bg":"shopify:\/\/shop_images\/Hblock1.png","title":"Ein Stück Afrika zu dir nach Hause.","p":"Bestelle noch heute und erhalte die Produkte innerhalb von 1-3 Werktagen zu Dir nach Hause geliefert.","url":"shopify:\/\/collections\/all","urltext":"ZUM SHOP","bgcolor":"#d5dee5","fullw":true}},"59212492-899f-4cec-b3cc-583c1e1507e3":{"type":"type","disabled":true,"settings":{"bg":"shopify:\/\/shop_images\/hblock2.png","title":"Stammkunde sein wird belohnt.","p":"Als Bronze Member kriegst du 25% Rabatt, als Silber Member 50% und sogar als Gold Member 100% Rabatt auf deine Bestellung!","url":"","urltext":"member werden","bgcolor":"#fdb073","fullw":false}}},"block_order":["8a9764a4-f4a2-47e8-81cb-42457aa7b1ad","59212492-899f-4cec-b3cc-583c1e1507e3"],"settings":{"bg":"shopify:\/\/shop_images\/SliderBG.png","bgcolor":"#f3f3f3"}},"map":{"type":"map","disabled":true,"settings":{"map_title":"Our retail store","address":"<p>301 Front St W<br\/>Toronto, Canada<\/p><p>Mon - Fri, 8:30am - 10:30pm<br\/>Saturday, 8:30am - 10:30pm<br\/>Sunday, 8:30am - 10:30pm<\/p>","map_address":"301 Front St W, Toronto, ON M5V 2T6","api_key":"","show_button":true,"background_image_position":"center center"}},"1659363556b0957596":{"type":"Categories","blocks":{"2d94149e-158b-4cad-8c74-fab2ad27435b":{"type":"type","settings":{"collection":"ghana","title":"Ghana","image":"shopify:\/\/shop_images\/WhatsApp_Image_2022-09-11_at_23.54.43.jpg"}},"67cbc330-b677-4cf8-9b95-54c243047e0f":{"type":"type","settings":{"collection":"nigeria-1","title":"Nigeria","image":"shopify:\/\/shop_images\/Country_1.png"}},"4a8fe474-6d4d-4c14-8ad5-2e2b12392a4c":{"type":"type","disabled":true,"settings":{"collection":"afrikanische-lebensmittel","title":"Südafrika","image":"shopify:\/\/shop_images\/Country.png"}},"76f42407-8b61-4d19-968d-3a3d7b65e73a":{"type":"type","disabled":true,"settings":{"collection":"curl-activator","title":"Zimbabwe","image":"shopify:\/\/shop_images\/Country_2.png"}},"ecbd8dc1-e6b0-42b2-875b-7fad49d061ca":{"type":"type","disabled":true,"settings":{"collection":"dosenprodukte","title":"Jamaica","image":"shopify:\/\/shop_images\/Country_3.png"}},"05e43b95-e8c3-4031-a91e-f49f1ae3e09a":{"type":"type","disabled":true,"settings":{"collection":"halal","title":"Halal","image":"shopify:\/\/shop_images\/Country_4.png"}}},"block_order":["2d94149e-158b-4cad-8c74-fab2ad27435b","67cbc330-b677-4cf8-9b95-54c243047e0f","4a8fe474-6d4d-4c14-8ad5-2e2b12392a4c","76f42407-8b61-4d19-968d-3a3d7b65e73a","ecbd8dc1-e6b0-42b2-875b-7fad49d061ca","05e43b95-e8c3-4031-a91e-f49f1ae3e09a"],"settings":{"title":"Produkte nach Ländern suchen"}},"1659636438ba1b39b2":{"type":"most-selling","settings":{}},"16593759475dcf22c5":{"type":"categories2","blocks":{"80bb7e50-a549-49c2-9fa7-8fb169dde2a6":{"type":"type","settings":{"collection":"afrikanische-lebensmittel","title":"African Food","image":"shopify:\/\/shop_images\/Africa_1.png"}},"2f4a39a4-9fff-4ec6-ac2a-a235b3964c7a":{"type":"type","settings":{"collection":"frisches-gemuse","title":"Frisches Gemüse","image":"shopify:\/\/shop_images\/vegetables_1.png"}},"34d749ce-5b18-4464-91b6-d49bb7fc95f5":{"type":"type","settings":{"collection":"getranke","title":"Getränke","image":"shopify:\/\/shop_images\/liquor.png"}},"d1e702af-91c9-4459-925b-d0d9642a48bd":{"type":"type","settings":{"collection":"kosmetik","title":"Kosmetik","image":"shopify:\/\/shop_images\/lotion_1.png"}},"e4a3d4c5-6056-4734-b7c6-b84f9d0e50f9":{"type":"type","settings":{"collection":"tiefkuhlprodukte","title":"Tiefkühlware","image":"shopify:\/\/shop_images\/ac_unit.png"}}},"block_order":["80bb7e50-a549-49c2-9fa7-8fb169dde2a6","2f4a39a4-9fff-4ec6-ac2a-a235b3964c7a","34d749ce-5b18-4464-91b6-d49bb7fc95f5","d1e702af-91c9-4459-925b-d0d9642a48bd","e4a3d4c5-6056-4734-b7c6-b84f9d0e50f9"],"settings":{"title":"Kategorien"}},"86d25f28-1a50-4813-8b9e-a4778f63f56d":{"type":"reputon-google-reviews-1665606324789","settings":{}},"1660050485d870fcd1":{"type":"featured-products-pp","disabled":true,"blocks":{"64a39980-a4b7-42cd-8cc2-b24a1bb204f1":{"type":"product","settings":{"product":"abacha-geschredderte-cassava-trocken"}},"973b5a31-88d6-4cfc-96a9-55ec109d254e":{"type":"product","settings":{"product":"a3-triple-action-tma-dermocare-seife"}},"662db600-c890-4933-a3d2-6c7399321511":{"type":"product","settings":{"product":"africa-best-organics-best-olivenol-deep-conditioner"}},"82399bd9-071e-4bd1-a3a6-f775bce5bcf0":{"type":"product","settings":{"product":"africa-best-texture-shea-butter-curls"}},"2e1396e7-1367-4b87-8c8c-81b40eed73b9":{"type":"product","settings":{"product":"kopie-von-african-beauty-hausa-koko-500g"}},"b96e591e-38d3-4025-9d03-58e96c1ae1e0":{"type":"product","settings":{"product":"africa-best-organics-best-olive-oil-moisturizing-growth-lotion"}}},"block_order":["64a39980-a4b7-42cd-8cc2-b24a1bb204f1","973b5a31-88d6-4cfc-96a9-55ec109d254e","662db600-c890-4933-a3d2-6c7399321511","82399bd9-071e-4bd1-a3a6-f775bce5bcf0","2e1396e7-1367-4b87-8c8c-81b40eed73b9","b96e591e-38d3-4025-9d03-58e96c1ae1e0"],"settings":{}},"1662942948dca4fdab":{"type":"fleximg","settings":{"hidemobile":true,"img":"shopify:\/\/shop_images\/DSC1863_1.jpg","title":"Unsere Mission","text":"Im Afroshop Mama T steht die Familie an erster Stelle. Aber nicht nur Familie Omorogbe, sondern alle afrikanischen Familien, die weit weg von ihrem Heimatland sind und sich trotzdem in Deutschland zu Hause fühlen wollen.","reverse":false}},"1660148689ef4c8121":{"type":"categories-pp","blocks":{"fd22f75b-0e3f-41a7-b0a2-6689245c70c9":{"type":"type","settings":{"collection":"african-beauty","title":"African Beauty","image":"shopify:\/\/shop_images\/image2.png","color":"#ffffff","hidemob":false}},"18a34082-20b4-46af-890f-a875514a7ebc":{"type":"type","disabled":true,"settings":{"collection":"afp","title":"AFP","image":"shopify:\/\/shop_images\/image_1.png","color":"#ffffff","hidemob":false}},"789268ee-fa54-4b59-8226-52f11e4985a4":{"type":"type","settings":{"collection":"cantu","title":"Cantu","image":"shopify:\/\/shop_images\/Mask_group.png","color":"#ffffff","hidemob":false}},"75439a27-01bf-42d4-ba0f-5b8f59505cbe":{"type":"type","settings":{"collection":"mama-t","title":"Mama-T","image":"shopify:\/\/shop_images\/Mamat_logo_7484_icon_1.jpg","color":"#ffffff","hidemob":false}},"dd016ee0-e982-479a-bf4a-305e410db455":{"type":"type","settings":{"collection":"shea-moisture","title":"Shea Moisture","image":"shopify:\/\/shop_images\/Mask_group_5a85b4bd-bcad-4d6e-90a5-c2f681e4fa62.png","color":"#ffffff","hidemob":false}}},"block_order":["fd22f75b-0e3f-41a7-b0a2-6689245c70c9","18a34082-20b4-46af-890f-a875514a7ebc","789268ee-fa54-4b59-8226-52f11e4985a4","75439a27-01bf-42d4-ba0f-5b8f59505cbe","dd016ee0-e982-479a-bf4a-305e410db455"],"settings":{"title":"Nach Marken suchen"}},"1660153904a5950ca3":{"type":"trustbadges","blocks":{"5d32abc4-58d8-4730-b495-8cfb37c2b8c7":{"type":"BAdge","settings":{"title":"Frische Garantie","subtitle":"Geld-zurück-Garantie bei schlechter Ware","img":"shopify:\/\/shop_images\/shield-tick.png"}},"f22f26d2-e0ce-4d4b-8c40-ad5afd5b342c":{"type":"BAdge","settings":{"title":"WhatsApp Support","subtitle":"Antwortzeit innerhalb 30 Minuten","img":"shopify:\/\/shop_images\/24-support.png"}},"f2310451-69eb-44b4-8d9e-8d1dbb34ec68":{"type":"BAdge","settings":{"title":"Kostenloser Versand","subtitle":"Ab einem Bestellwert von 49 EUR","img":"shopify:\/\/shop_images\/group_Kopie.png"}},"d984d97b-44cd-45cd-8ae8-708ddaaa4126":{"type":"BAdge","settings":{"title":"Tägliche Angebote","subtitle":"Bis zu 50% sparen","img":"shopify:\/\/shop_images\/flash.png"}}},"block_order":["5d32abc4-58d8-4730-b495-8cfb37c2b8c7","f22f26d2-e0ce-4d4b-8c40-ad5afd5b342c","f2310451-69eb-44b4-8d9e-8d1dbb34ec68","d984d97b-44cd-45cd-8ae8-708ddaaa4126"],"settings":{}},"16629438018945c65c":{"type":"fleximgusp","disabled":true,"settings":{"img":"shopify:\/\/shop_images\/Image3.jpg","title":"TEST","text":"LELELELELLELELEE"}}},"order":["1659357211a616fa65","map","1659363556b0957596","1659636438ba1b39b2","16593759475dcf22c5","86d25f28-1a50-4813-8b9e-a4778f63f56d","1660050485d870fcd1","1662942948dca4fdab","1660148689ef4c8121","1660153904a5950ca3","16629438018945c65c"]}
+{
+  "sections": {
+    "1659357211a616fa65": {
+      "type": "banner-section",
+      "blocks": {
+        "8a9764a4-f4a2-47e8-81cb-42457aa7b1ad": {
+          "type": "type",
+          "settings": {
+            "bg": "shopify:\/\/shop_images\/Hblock1.png",
+            "title": "Ein Stück Afrika zu dir nach Hause.",
+            "p": "Bestelle noch heute und erhalte die Produkte innerhalb von 1-3 Werktagen zu Dir nach Hause geliefert.",
+            "url": "shopify:\/\/collections\/all",
+            "urltext": "ZUM SHOP",
+            "bgcolor": "#d5dee5"
+          }
+        },
+        "59212492-899f-4cec-b3cc-583c1e1507e3": {
+          "type": "type",
+          "disabled": true,
+          "settings": {
+            "bg": "shopify:\/\/shop_images\/hblock2.png",
+            "title": "Stammkunde sein wird belohnt.",
+            "p": "Als Bronze Member kriegst du 25% Rabatt, als Silber Member 50% und sogar als Gold Member 100% Rabatt auf deine Bestellung!",
+            "url": "",
+            "urltext": "member werden",
+            "bgcolor": "#fdb073"
+          }
+        }
+      },
+      "block_order": [
+        "8a9764a4-f4a2-47e8-81cb-42457aa7b1ad",
+        "59212492-899f-4cec-b3cc-583c1e1507e3"
+      ],
+      "settings": {
+        "bg": "shopify:\/\/shop_images\/SliderBG.png",
+        "bgcolor": "#f3f3f3"
+      }
+    },
+    "map": {
+      "type": "map",
+      "disabled": true,
+      "settings": {
+        "map_title": "Our retail store",
+        "address": "<p>301 Front St W<br\/>Toronto, Canada<\/p><p>Mon - Fri, 8:30am - 10:30pm<br\/>Saturday, 8:30am - 10:30pm<br\/>Sunday, 8:30am - 10:30pm<\/p>",
+        "map_address": "301 Front St W, Toronto, ON M5V 2T6",
+        "api_key": "",
+        "show_button": true,
+        "background_image_position": "center center"
+      }
+    },
+    "1659363556b0957596": {
+      "type": "Categories",
+      "blocks": {
+        "2d94149e-158b-4cad-8c74-fab2ad27435b": {
+          "type": "type",
+          "settings": {
+            "collection": "ghana",
+            "title": "Ghana",
+            "image": "shopify:\/\/shop_images\/WhatsApp_Image_2022-09-11_at_23.54.43.jpg"
+          }
+        },
+        "67cbc330-b677-4cf8-9b95-54c243047e0f": {
+          "type": "type",
+          "settings": {
+            "collection": "nigeria-1",
+            "title": "Nigeria",
+            "image": "shopify:\/\/shop_images\/Country_1.png"
+          }
+        },
+        "4a8fe474-6d4d-4c14-8ad5-2e2b12392a4c": {
+          "type": "type",
+          "disabled": true,
+          "settings": {
+            "collection": "afrikanische-lebensmittel",
+            "title": "Südafrika",
+            "image": "shopify:\/\/shop_images\/Country.png"
+          }
+        },
+        "76f42407-8b61-4d19-968d-3a3d7b65e73a": {
+          "type": "type",
+          "disabled": true,
+          "settings": {
+            "collection": "curl-activator",
+            "title": "Zimbabwe",
+            "image": "shopify:\/\/shop_images\/Country_2.png"
+          }
+        },
+        "ecbd8dc1-e6b0-42b2-875b-7fad49d061ca": {
+          "type": "type",
+          "disabled": true,
+          "settings": {
+            "collection": "dosenprodukte",
+            "title": "Jamaica",
+            "image": "shopify:\/\/shop_images\/Country_3.png"
+          }
+        },
+        "05e43b95-e8c3-4031-a91e-f49f1ae3e09a": {
+          "type": "type",
+          "disabled": true,
+          "settings": {
+            "collection": "halal",
+            "title": "Halal",
+            "image": "shopify:\/\/shop_images\/Country_4.png"
+          }
+        }
+      },
+      "block_order": [
+        "2d94149e-158b-4cad-8c74-fab2ad27435b",
+        "67cbc330-b677-4cf8-9b95-54c243047e0f",
+        "4a8fe474-6d4d-4c14-8ad5-2e2b12392a4c",
+        "76f42407-8b61-4d19-968d-3a3d7b65e73a",
+        "ecbd8dc1-e6b0-42b2-875b-7fad49d061ca",
+        "05e43b95-e8c3-4031-a91e-f49f1ae3e09a"
+      ],
+      "settings": {
+        "title": "Produkte nach Ländern suchen"
+      }
+    },
+    "1659636438ba1b39b2": {
+      "type": "most-selling",
+      "settings": {
+      }
+    },
+    "16593759475dcf22c5": {
+      "type": "categories2",
+      "blocks": {
+        "80bb7e50-a549-49c2-9fa7-8fb169dde2a6": {
+          "type": "type",
+          "settings": {
+            "collection": "afrikanische-lebensmittel",
+            "title": "African Food",
+            "image": "shopify:\/\/shop_images\/Africa_1.png"
+          }
+        },
+        "2f4a39a4-9fff-4ec6-ac2a-a235b3964c7a": {
+          "type": "type",
+          "settings": {
+            "collection": "frisches-gemuse",
+            "title": "Frisches Gemüse",
+            "image": "shopify:\/\/shop_images\/vegetables_1.png"
+          }
+        },
+        "34d749ce-5b18-4464-91b6-d49bb7fc95f5": {
+          "type": "type",
+          "settings": {
+            "collection": "getranke",
+            "title": "Getränke",
+            "image": "shopify:\/\/shop_images\/liquor.png"
+          }
+        },
+        "d1e702af-91c9-4459-925b-d0d9642a48bd": {
+          "type": "type",
+          "settings": {
+            "collection": "kosmetik",
+            "title": "Kosmetik",
+            "image": "shopify:\/\/shop_images\/lotion_1.png"
+          }
+        },
+        "e4a3d4c5-6056-4734-b7c6-b84f9d0e50f9": {
+          "type": "type",
+          "settings": {
+            "collection": "tiefkuhlprodukte",
+            "title": "Tiefkühlware",
+            "image": "shopify:\/\/shop_images\/ac_unit.png"
+          }
+        }
+      },
+      "block_order": [
+        "80bb7e50-a549-49c2-9fa7-8fb169dde2a6",
+        "2f4a39a4-9fff-4ec6-ac2a-a235b3964c7a",
+        "34d749ce-5b18-4464-91b6-d49bb7fc95f5",
+        "d1e702af-91c9-4459-925b-d0d9642a48bd",
+        "e4a3d4c5-6056-4734-b7c6-b84f9d0e50f9"
+      ],
+      "settings": {
+        "title": "Kategorien"
+      }
+    },
+    "86d25f28-1a50-4813-8b9e-a4778f63f56d": {
+      "type": "reputon-google-reviews-1665606324789",
+      "settings": {
+      }
+    },
+    "1660050485d870fcd1": {
+      "type": "featured-products-pp",
+      "disabled": true,
+      "blocks": {
+        "64a39980-a4b7-42cd-8cc2-b24a1bb204f1": {
+          "type": "product",
+          "settings": {
+            "product": "abacha-geschredderte-cassava-trocken"
+          }
+        },
+        "973b5a31-88d6-4cfc-96a9-55ec109d254e": {
+          "type": "product",
+          "settings": {
+            "product": "a3-triple-action-tma-dermocare-seife"
+          }
+        },
+        "662db600-c890-4933-a3d2-6c7399321511": {
+          "type": "product",
+          "settings": {
+            "product": "africa-best-organics-best-olivenol-deep-conditioner"
+          }
+        },
+        "82399bd9-071e-4bd1-a3a6-f775bce5bcf0": {
+          "type": "product",
+          "settings": {
+            "product": "africa-best-texture-shea-butter-curls"
+          }
+        },
+        "2e1396e7-1367-4b87-8c8c-81b40eed73b9": {
+          "type": "product",
+          "settings": {
+            "product": "kopie-von-african-beauty-hausa-koko-500g"
+          }
+        },
+        "b96e591e-38d3-4025-9d03-58e96c1ae1e0": {
+          "type": "product",
+          "settings": {
+            "product": "africa-best-organics-best-olive-oil-moisturizing-growth-lotion"
+          }
+        }
+      },
+      "block_order": [
+        "64a39980-a4b7-42cd-8cc2-b24a1bb204f1",
+        "973b5a31-88d6-4cfc-96a9-55ec109d254e",
+        "662db600-c890-4933-a3d2-6c7399321511",
+        "82399bd9-071e-4bd1-a3a6-f775bce5bcf0",
+        "2e1396e7-1367-4b87-8c8c-81b40eed73b9",
+        "b96e591e-38d3-4025-9d03-58e96c1ae1e0"
+      ],
+      "settings": {
+      }
+    },
+    "1662942948dca4fdab": {
+      "type": "fleximg",
+      "settings": {
+        "hidemobile": true,
+        "img": "shopify:\/\/shop_images\/DSC1863_1.jpg",
+        "title": "Unsere Mission",
+        "text": "Im Afroshop Mama T steht die Familie an erster Stelle. Aber nicht nur Familie Omorogbe, sondern alle afrikanischen Familien, die weit weg von ihrem Heimatland sind und sich trotzdem in Deutschland zu Hause fühlen wollen.",
+        "reverse": false
+      }
+    },
+    "1660148689ef4c8121": {
+      "type": "categories-pp",
+      "blocks": {
+        "fd22f75b-0e3f-41a7-b0a2-6689245c70c9": {
+          "type": "type",
+          "settings": {
+            "collection": "african-beauty",
+            "title": "African Beauty",
+            "image": "shopify:\/\/shop_images\/image2.png",
+            "color": "#ffffff"
+          }
+        },
+        "18a34082-20b4-46af-890f-a875514a7ebc": {
+          "type": "type",
+          "disabled": true,
+          "settings": {
+            "collection": "afp",
+            "title": "AFP",
+            "image": "shopify:\/\/shop_images\/image_1.png",
+            "color": "#ffffff"
+          }
+        },
+        "789268ee-fa54-4b59-8226-52f11e4985a4": {
+          "type": "type",
+          "settings": {
+            "collection": "cantu",
+            "title": "Cantu",
+            "image": "shopify:\/\/shop_images\/Mask_group.png",
+            "color": "#ffffff"
+          }
+        },
+        "75439a27-01bf-42d4-ba0f-5b8f59505cbe": {
+          "type": "type",
+          "settings": {
+            "collection": "mama-t",
+            "title": "Mama-T",
+            "image": "shopify:\/\/shop_images\/Mamat_logo_7484_icon_1.jpg",
+            "color": "#ffffff"
+          }
+        },
+        "dd016ee0-e982-479a-bf4a-305e410db455": {
+          "type": "type",
+          "settings": {
+            "collection": "shea-moisture",
+            "title": "Shea Moisture",
+            "image": "shopify:\/\/shop_images\/Mask_group_5a85b4bd-bcad-4d6e-90a5-c2f681e4fa62.png",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "fd22f75b-0e3f-41a7-b0a2-6689245c70c9",
+        "18a34082-20b4-46af-890f-a875514a7ebc",
+        "789268ee-fa54-4b59-8226-52f11e4985a4",
+        "75439a27-01bf-42d4-ba0f-5b8f59505cbe",
+        "dd016ee0-e982-479a-bf4a-305e410db455"
+      ],
+      "settings": {
+        "title": "Nach Marken suchen"
+      }
+    },
+    "1660153904a5950ca3": {
+      "type": "trustbadges",
+      "blocks": {
+        "5d32abc4-58d8-4730-b495-8cfb37c2b8c7": {
+          "type": "BAdge",
+          "settings": {
+            "title": "Frische Garantie",
+            "subtitle": "Geld-zurück-Garantie bei schlechter Ware",
+            "img": "shopify:\/\/shop_images\/shield-tick.png"
+          }
+        },
+        "f22f26d2-e0ce-4d4b-8c40-ad5afd5b342c": {
+          "type": "BAdge",
+          "settings": {
+            "title": "WhatsApp Support",
+            "subtitle": "Antwortzeit innerhalb 30 Minuten",
+            "img": "shopify:\/\/shop_images\/24-support.png"
+          }
+        },
+        "f2310451-69eb-44b4-8d9e-8d1dbb34ec68": {
+          "type": "BAdge",
+          "settings": {
+            "title": "Kostenloser Versand",
+            "subtitle": "Ab einem Bestellwert von 49 EUR",
+            "img": "shopify:\/\/shop_images\/group_Kopie.png"
+          }
+        },
+        "d984d97b-44cd-45cd-8ae8-708ddaaa4126": {
+          "type": "BAdge",
+          "settings": {
+            "title": "Tägliche Angebote",
+            "subtitle": "Bis zu 50% sparen",
+            "img": "shopify:\/\/shop_images\/flash.png"
+          }
+        }
+      },
+      "block_order": [
+        "5d32abc4-58d8-4730-b495-8cfb37c2b8c7",
+        "f22f26d2-e0ce-4d4b-8c40-ad5afd5b342c",
+        "f2310451-69eb-44b4-8d9e-8d1dbb34ec68",
+        "d984d97b-44cd-45cd-8ae8-708ddaaa4126"
+      ],
+      "settings": {
+      }
+    },
+    "16629438018945c65c": {
+      "type": "fleximgusp",
+      "disabled": true,
+      "settings": {
+        "img": "shopify:\/\/shop_images\/Image3.jpg",
+        "title": "TEST",
+        "text": "LELELELELLELELEE"
+      }
+    }
+  },
+  "order": [
+    "1659357211a616fa65",
+    "map",
+    "1659363556b0957596",
+    "1659636438ba1b39b2",
+    "16593759475dcf22c5",
+    "86d25f28-1a50-4813-8b9e-a4778f63f56d",
+    "1660050485d870fcd1",
+    "1662942948dca4fdab",
+    "1660148689ef4c8121",
+    "1660153904a5950ca3",
+    "16629438018945c65c"
+  ]
+}

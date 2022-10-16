@@ -4,7 +4,7 @@
 <div class="catholder align-top">
 {% for block in section.blocks %}
 {% assign collection = collections[block.settings.collection] %}
-<div class="catholder3">
+<div class="catholder3 {% if hidemob %}small--hide{% endif %}"">
 <a class="catchild" style="background-image:url({{block.settings.image | img_url:"400x"}}); background-color{{ block.settings.color }};" href="{{ collection.url }}">
 
 </a>
@@ -53,6 +53,12 @@
       "id": "color",
       "label": "PNG Overlay",
       "default":"#ffffff"
+    },
+        {
+      "type": "checkbox",
+      "id": "hidemob",
+      "label": "Mobil Ausblenden",
+      "default": false
     }
         
       ]

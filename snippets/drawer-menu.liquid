@@ -173,10 +173,9 @@
 <div class="menudiv"></div>
 <ul class="mobile-nav__social appear-animation appear-delay-{{ animation_row }}">
 <div class="whatsapp">
-  <div class="whatsapptext">
-    <p>0176 628 92254</p>
-    <p class="light">Support 24/4</p>
-  </div>
+  <a href="tel:004915906355599" class="whatsapptext">
+    <p>01590 63 555 99</p>
+  </a>
 <div class="whatsapp-logo">
 <img src="{{ section.settings.whatsapp | img_url: "100x"}}">
 </div>
@@ -198,7 +197,8 @@
 </ul>
 <div class="menudiv"></div>
 <ul class="mobile-nav__social appear-animation appear-delay-{{ animation_row }}">
-<div class="freeshipping">{% render 'bluetruck' %} Gratis  Versand ab 29 EUR</div>
+<div class="freeshipping">{% render 'bluetruck' %} Kostenloser Versand ab {{ settings.freeshipping }} EUR</div>
+<div class="freeshipping newslettercta" style=" margin-top:1rem; margin-right:0;"><a style="color:#D82C0D; padding:0;" href="/pages/mama-t-club">20% Rabatt</a></div>
 </ul>
               
               

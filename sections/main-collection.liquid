@@ -5,7 +5,40 @@
     assign current_filter_size = current_filter_size | plus: filter.active_values.size
   endfor
 -%}
+<script>
+$(document).ready(function() {
+if ($('.price-range__input-min').val().length > 0){
+$( "[data-del-price]").show();
+}
+  
+  $( "[data-price-submit]" ).on("click", function() {
+    console.log('changed');
+var parent = $(this).parent();
+var min = parent.children('.price-range__input-min').val();
+var max = parent.children('.price-range__input-max').val();
+if (max < min){
+$(this).parent().children('input').css("background","#e98989");
+  return
+}
 
+parent.children('.price-range__input-min').val(min);
+parent.children('.price-range__input-min').attr("value",min);
+parent.children('.price-range__input-max').attr("value",max);
+parent.children('[data-send-form]').click();    
+    
+});
+
+$( "[data-del-price]" ).on("click", function() {
+$(this).addClass('btn--loading');
+var parent = $(this).parent();
+parent.children('.price-range__input-min').val('');
+parent.children('.price-range__input-min').attr("value",'');
+parent.children('.price-range__input-max').attr("value",'');
+parent.children('[data-send-form]').click();   
+    
+  });
+});
+</script>
 <div
   class="collection-content"
   data-section-id="{{ section.id }}"

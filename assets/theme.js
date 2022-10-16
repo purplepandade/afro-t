@@ -1820,7 +1820,7 @@ lazySizesConfig.expFactor = 4;
         if (bubbles.length) {
           if (count > 0) {
             bubbles.forEach(b => {
-              b.classList.add('cart-link__bubble--visiblePanda');
+              b.classList.add('cart-link__bubble--visible');
             });
           } else {
             bubbles.forEach(b => {
@@ -3935,10 +3935,12 @@ lazySizesConfig.expFactor = 4;
   
       open: function() {
         this.drawer.open();
+        window.dispatchEvent('cart:open');
       },
   
       close: function() {
         this.drawer.close();
+        
       }
     });
   
@@ -4434,7 +4436,7 @@ lazySizesConfig.expFactor = 4;
       cache.input.on('keyup' + namespace, handleKeyup);
   
       cache.submit = cache.wrapper.querySelector(selectors.searchButton);
-      cache.submit.on('click' + namespace, triggerSearch);
+      //cache.submit.on('click' + namespace, triggerSearch);
   
       cache.results = document.querySelector(selectors.resultDiv);
     }
@@ -4532,7 +4534,6 @@ lazySizesConfig.expFactor = 4;
       .then(suggestions => {
         isLoading = false;
         var data = {};
-        
         var resultCount = 0;
   
         cache.wrapper.classList.remove('hide');
@@ -4542,7 +4543,6 @@ lazySizesConfig.expFactor = 4;
           var obj = resultTypes[i];
           var type = obj[0];
           var results = obj[1];
-          
           resultCount += results.length;
   
           switch(type) {
@@ -4568,8 +4568,8 @@ lazySizesConfig.expFactor = 4;
   
         // Build and append result markup
         var output = buildOutput(data);
-        cache.results.innerHTML = '';
-        cache.results.innerHTML = output;
+        //cache.results.innerHTML = '';
+        //cache.results.innerHTML = output;
       });
     }
   
@@ -4582,12 +4582,9 @@ lazySizesConfig.expFactor = 4;
           title: product.title,
           url: product.url,
           image_responsive_url: theme.Images.lazyloadImagePath(product.image),
-          image_aspect_ratio: product.featured_image.aspect_ratio,
-          price:product.price,
-          comprice:product.compare_at_price_min
-          
+          image_aspect_ratio: product.featured_image.aspect_ratio
         };
-  console.log(product);
+  
         products.push(new_product);
       });
   
@@ -4718,38 +4715,20 @@ lazySizesConfig.expFactor = 4;
   
   theme.buildProductGridItem = function(items, gridWidth, rowOf, imageSize) {
     var output = '';
-  //panda
+  
     items.forEach(product => {
       var image = theme.buildProductImage(product, imageSize);
       var markup = `
         <div class="grid__item grid-product ${gridWidth} aos-animate" data-aos="row-of-${rowOf}">
           <div class="grid-product__content">
-            <div href="${product.url}" class="grid-product__link">
+            <a href="${product.url}" class="grid-product__link">
               <div class="grid-product__image-mask">
                 ${image}
               </div>
               <div class="grid-product__meta">
-                <a class="grid-product__title" href="${product.url}">${product.title}</a>
-                <div class="grid-product__prices">
-                <span class="comprice">
-                ${product.comprice}
-                </span>${product.price}</div>
+                <div class="grid-product__title">${product.title}</div>
               </div>
-<div class="pcardatc">
-<div class="js-qty__wrapper">
-          <input type="text" class="js-qty__num" value="1" min="0" pattern="[0-9]*">
-          <button type="button" class="js-qty__adjust js-qty__adjust--minus" aria-label="Artikelmenge um eins reduzieren">
-              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-minus" viewBox="0 0 20 20"><path fill="#444" d="M17.543 11.029H2.1A1.032 1.032 0 0 1 1.071 10c0-.566.463-1.029 1.029-1.029h15.443c.566 0 1.029.463 1.029 1.029 0 .566-.463 1.029-1.029 1.029z"></path></svg>
-              <span class="icon__fallback-text" aria-hidden="true">−</span>
-          </button>
-          <button type="button" class="js-qty__adjust js-qty__adjust--plus" aria-label="Artikelmenge um eins erhöhen">
-              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-plus" viewBox="0 0 20 20"><path fill="#444" d="M17.409 8.929h-6.695V2.258c0-.566-.506-1.029-1.071-1.029s-1.071.463-1.071 1.029v6.671H1.967C1.401 8.929.938 9.435.938 10s.463 1.071 1.029 1.071h6.605V17.7c0 .566.506 1.029 1.071 1.029s1.071-.463 1.071-1.029v-6.629h6.695c.566 0 1.029-.506 1.029-1.071s-.463-1.071-1.029-1.071z"></path></svg>
-              <span class="icon__fallback-text" aria-hidden="true">+</span>
-          </button>
-        </div>
-</div>
-              
-            </div>
+            </a>
           </div>
         </div>
       `;
@@ -6050,10 +6029,14 @@ lazySizesConfig.expFactor = 4;
       },
   
       onFormSubmit: function(evt) {
+        console.log(evt);
         var el = evt.target;
   
         if (theme.FilterDrawer) {
-          theme.FilterDrawer.close();
+          if (evt.inputtype !== "insertText"){
+            console.log('inputtext');
+          }
+          //theme.FilterDrawer.close();
         }
   
         // Do not ajax-load collection links
