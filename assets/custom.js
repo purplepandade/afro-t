@@ -81,10 +81,13 @@ else{
 }
 });
 
+
 var that2 = $('#mobilewrapper');
 var top2 = that2.offset().top;
 
+if ($('#mobilewrapper').length){
 that2.attr('data-scrolltop', top);
+}
 
 $(window).scroll(function(){
 var data2 = $(that2).data('scrolltop');
@@ -295,10 +298,7 @@ $(document).on("click", function(e) {
 
 function loadimgheights(){
       $(".animateimg").each(function() {
-        var height = $(this).height();
-        var h = $(this).parent().parent().children('.pcardhide').prop('scrollHeight');
-        $(this).attr('data-height', height);
-        $(this).css('min-height', height - h);
+
         console.log(height);
     });
       $(".animateimg2").each(function() {
@@ -546,7 +546,21 @@ function card() {
 //card qty mob
 function cardmob(){
  $('.pcard .js-qty__num').val(0);
+ 
 $( ".cstmqty .js-qty__adjust--plus" ).on( "click", function() {
+
+
+  $(this).attr('data-height', height);
+  $(this).css('min-height', height - h);
+      var img = $(this).parents('.pcard').find('.animateimg'); //PP
+      var height = img.height();
+      var width = img.width();
+      img.css('max-height',width);
+      
+
+      var h = $(this).parent().parent().children('.pcardhide').prop('scrollHeight');
+
+      $(this).attr('data-height', height);
 
   $(this).parent().attr('data-hidden','false');
   $(this).siblings('.qtyoverlay').find('[data-noborder]').show();
@@ -681,16 +695,6 @@ function cartmobile(){
 
 
 function savepcard(){
-      $(".animateimg").each(function() {
-        var height = $(this).height();
-      var width = $(this).width();
-      $(this).css('max-height',width);
-        var h = $(this).parent().parent().children('.pcardhide').prop('scrollHeight');
-        $(this).attr('data-height', height);
-        //$(this).css('min-height', height - h);
-        console.log(height);
-    });
-
         $(".animateimg2").each(function() {
         var height = $(this).height();
       var width = $(this).prop('scrollWidth');
@@ -708,7 +712,7 @@ function savepcard(){
            return;
           }
       var width = $(this).width();
-      $(this).css('max-height',width);
+      //$(this).css('max-height',width);
           
        if ($(this).hasClass('animateimg2') == true){
             var width = $(this).prop('scrollWidth');
