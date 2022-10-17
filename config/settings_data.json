@@ -2,7 +2,7 @@
   "current": {
     "color_body_bg": "#ffffff",
     "color_body_text": "#202223",
-    "color_price": "#d1ba98",
+    "color_price": "#1d4835",
     "color_savings_text": "#b30000",
     "color_borders": "#2b2a27",
     "color_button": "#ffffff",
@@ -33,8 +33,8 @@
     "type_header_capitalize": false,
     "type_headers_align_text": true,
     "type_base_font_family": "itc_conduit_n4",
-    "type_base_spacing": "50",
-    "type_base_size": 14,
+    "type_base_spacing": "0",
+    "type_base_size": 16,
     "type_base_line_height": 1.4,
     "type_body_align_text": true,
     "type_navigation_style": "heading",
@@ -47,6 +47,7 @@
     "icon_weight": "5px",
     "icon_linecaps": "miter",
     "product_save_amount": true,
+    "freeshipping": "49",
     "quick_shop_enable": true,
     "quick_shop_text": "Quick view",
     "product_grid_image_size": "square",
@@ -63,17 +64,19 @@
     "cart_terms_conditions_enable": false,
     "search_enable": true,
     "search_type": "product",
+    "predictive_search_enabled": true,
     "predictive_search_show_price": true,
-    "checkout_logo_position": "left",
-    "checkout_logo_size": "small",
-    "checkout_body_background_color": "#000000",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Mama-Tx4.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_color": "#ffffff",
     "checkout_input_background_color_mode": "transparent",
-    "checkout_sidebar_background_color": "#000000",
+    "checkout_sidebar_background_color": "#ffffff",
     "checkout_heading_font": "Helvetica Neue",
     "checkout_body_font": "Helvetica Neue",
-    "checkout_accent_color": "#ae9878",
-    "checkout_button_color": "#ae9878",
-    "checkout_error_color": "#ff6d6d",
+    "checkout_accent_color": "#1d4835",
+    "checkout_button_color": "#1d4835",
+    "checkout_error_color": "#b30000",
     "breadcrumb": true,
     "product_content_collapse_1": false,
     "product_content_collapse_2": true,
@@ -103,7 +106,7 @@
             "settings": {
               "logo": "shopify:\/\/shop_images\/Mama-Tx4.png",
               "desktop_logo_width": 200,
-              "mobile_logo_width": 140
+              "mobile_logo_width": 60
             }
           }
         },
@@ -238,11 +241,63 @@
           "hide_homepage": false,
           "image_size": "wide"
         }
+      },
+      "footer-custom": {
+        "type": "footer-custom",
+        "blocks": {
+          "bc224720-6979-4a51-aa60-6603e48bf98f": {
+            "type": "menu",
+            "settings": {
+              "heading": "Afroshop Mama T",
+              "menu": "footerlinks"
+            }
+          },
+          "42179d50-8b81-4e00-9008-7ffa53d2227c": {
+            "type": "menu",
+            "settings": {
+              "heading": "Rechtliches",
+              "menu": "footer"
+            }
+          },
+          "649185fe-74c7-4ddb-a701-50647d137835": {
+            "type": "newsletter",
+            "disabled": true,
+            "settings": {
+              "text": "Register now to get updates on promotions and coupns. \nDon’t worry! We not spam."
+            }
+          }
+        },
+        "block_order": [
+          "bc224720-6979-4a51-aa60-6603e48bf98f",
+          "42179d50-8b81-4e00-9008-7ffa53d2227c",
+          "649185fe-74c7-4ddb-a701-50647d137835"
+        ],
+        "settings": {
+          "heading": "Afrika ganz nah - Täglich frische Produkte!",
+          "text": "Unser Online Shop steht für afrikanische Vielfalt. Versandkostenfreie Lieferung ab 49€. Wir liefern täglich\nfrische Produkte aus vielen Teilen Afrikas.",
+          "address": "Berliner Platz 13a, 22045 Hamburg",
+          "tellink": "01590 063 555 99",
+          "maillink": "info@mama-t.de"
+        }
       }
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "11349500561483629931": {
+        "type": "shopify:\/\/apps\/ReStock\/blocks\/app-embed\/b399b727-6c85-44fc-9e21-63114bd72054",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   },
   "presets": {
     "Modern": {
