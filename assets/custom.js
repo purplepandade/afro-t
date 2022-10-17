@@ -724,13 +724,18 @@ function savepcard(){
         //custconsole.log(height);
     });
 
+    $('.animateimg').each(function() {
+      var w = $(this).width();
+      //$(this).css('max-height', w);
+    });
+
           $(".pcard").each(function() {
         var height = $(this).height();
       var scroll = $(this).find('.pcardhide').prop('scrollHeight');
       var del = $(this).find('.qtyoverlay').prop('scrollHeight');
-        $(this).css('min-height', height+scroll-del-10);
+        //$(this).css('min-height', height+scroll-del-10);
         //$(this).css('min-height', height - h);
-        console.log(height);
+        
     });
   
 }

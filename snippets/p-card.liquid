@@ -9,7 +9,7 @@
 <div class="pholder" style="">
 <a href="{{ product.url }}" class="pimage"> 
 {%- assign img_url = product.images[0] | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-<img class="animateimg lazyload" 
+<img class="animateimg" 
   src="{{ product.images[0] | img_url:"50x",scale:3 }}">
 </a>
 <div  class="pcardtxt">

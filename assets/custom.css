@@ -584,6 +584,11 @@ width: 12.5%;
 }
 @media only screen and (max-width: 769px){
 
+  .animateimg{
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
 .product-slideshow{
   width:85%;
   margin:0 auto;
@@ -845,6 +850,7 @@ border-radius: 4px;
   margin-bottom:0.5rem;
   height:100%;
   width:auto;
+  max-height:70%;
 }
 
 .grid .pcard{
