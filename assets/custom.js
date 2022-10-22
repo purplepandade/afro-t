@@ -1,6 +1,6 @@
 $(window).on("load", function() {
   if ($(window).width() > 768){
-   //hover(); 
+   hover(); 
   }else{
     cardmob();
     savepcard();
@@ -81,13 +81,10 @@ else{
 }
 });
 
-
 var that2 = $('#mobilewrapper');
 var top2 = that2.offset().top;
 
-if ($('#mobilewrapper').length){
 that2.attr('data-scrolltop', top);
-}
 
 $(window).scroll(function(){
 var data2 = $(that2).data('scrolltop');
@@ -298,7 +295,10 @@ $(document).on("click", function(e) {
 
 function loadimgheights(){
       $(".animateimg").each(function() {
-
+        var height = $(this).height();
+        var h = $(this).parent().parent().children('.pcardhide').prop('scrollHeight');
+        $(this).attr('data-height', height);
+        $(this).css('min-height', height - h);
         console.log(height);
     });
       $(".animateimg2").each(function() {
@@ -315,47 +315,60 @@ function loadimgheights(){
 
 //HoverAnimation Extrahiert:
 function hover() {
+    //Höhe Saven
+    $(".animateimg").each(function() {
+        var height = $(this).height();
+      var width = $(this).width();
+      $(this).css('max-height',width);
+        var h = $(this).parent().parent().children('.pcardhide').prop('scrollHeight');
+        $(this).attr('data-height', height);
+        //$(this).css('min-height', height - h);
+        console.log(height);
+    });
+      $(".pholder").each(function() {
+        var height = $(this).height();
+        var h = $(this).parent().parent().children('.pcardhide').prop('scrollHeight');
+        $(this).attr('data-height', height);
+        //$(this).css('min-height', height - h);
+        console.log(height);
+    });
+
+
+
     //HoverAnimation
     $(".pcard").hover(function() {
-      var card = $(this);
 
-      if (card.attr('aria-expanded') == 'true'){
-        return
+        var h = $(this).children('.pcardhide').prop('scrollHeight');
+        var imgheight = $(this).find('.pholder').outerHeight();
+      if ($(this).find('.pholder').attr('data-height') == '0'){
+      $(this).find('.pholder').attr('data-height',imgheight);
       }
-      $(this).attr('aria-expanded', true);
-      
-      var maxheight = $(this).outerHeight();
-      card.css('height', maxheight);
-      card.phide = card.children('.pcardhide');
-      card.pholder = card.children('.pholder');
-
-      var height = card.children('.pcardhide').prop('scrollHeight');
-      var pholderHeight = card.pholder.prop('scrollHeight') - height;
-      
-
-      $(card.phide).animate({
-        height: height
-      }, 200 );
-
-      $(card.pholder).animate({
-        height: pholderHeight
-      }, 200 );
-
+      var pheight = $(this).find('.pholder').prop('scrollHeight');
+        var imgheight2 = imgheight - h;
+        
+        $(this).find('.pholder').animate({
+            height: imgheight2
+        }, 200, function() {
+          var height2 = $(this).find('img').height();
+          $(this).find('img').css('min-height',height2)
+        });
+        $(this).children('.pcardhide').animate({
+            height: h
+        }, 200, function() {
+            // Animation complete.
+        })
     }, function() {
-      var card = $(this);
-      card.phide = card.children('.pcardhide');
-      card.pholder = card.children('.pholder');
-
-      $(card.pholder).animate({
-        height: '100%'
-      }, 200 );
-
-      $(card.phide).animate({
-        height: 0
-      }, 200 );
-
-      $(this).attr('aria-expanded', false);
-
+      var height = $(this).find('.pholder').attr('data-height');
+        $(this).find('.pholder').animate({
+            height: height
+        }, 200, function() {
+            // Animation complete.
+        });
+        $(this).children('.pcardhide').animate({
+            height: 0
+        }, 200, function() {
+            // Animation complete.
+        });
     });
 }
 
@@ -376,7 +389,7 @@ function initajax(){
   }else{
     cardmob();
   }
-  //priceFilter();
+  priceFilter();
 }
 
 //Custom Quantity Selector
@@ -546,21 +559,7 @@ function card() {
 //card qty mob
 function cardmob(){
  $('.pcard .js-qty__num').val(0);
- 
 $( ".cstmqty .js-qty__adjust--plus" ).on( "click", function() {
-
-
-  $(this).attr('data-height', height);
-  $(this).css('min-height', height - h);
-      var img = $(this).parents('.pcard').find('.animateimg'); //PP
-      var height = img.height();
-      var width = img.width();
-      img.css('max-height',width);
-      
-
-      var h = $(this).parent().parent().children('.pcardhide').prop('scrollHeight');
-
-      $(this).attr('data-height', height);
 
   $(this).parent().attr('data-hidden','false');
   $(this).siblings('.qtyoverlay').find('[data-noborder]').show();
@@ -695,6 +694,16 @@ function cartmobile(){
 
 
 function savepcard(){
+      $(".animateimg").each(function() {
+        var height = $(this).height();
+      var width = $(this).width();
+      $(this).css('max-height',width);
+        var h = $(this).parent().parent().children('.pcardhide').prop('scrollHeight');
+        $(this).attr('data-height', height);
+        //$(this).css('min-height', height - h);
+        console.log(height);
+    });
+
         $(".animateimg2").each(function() {
         var height = $(this).height();
       var width = $(this).prop('scrollWidth');
@@ -712,7 +721,7 @@ function savepcard(){
            return;
           }
       var width = $(this).width();
-      //$(this).css('max-height',width);
+      $(this).css('max-height',width);
           
        if ($(this).hasClass('animateimg2') == true){
             var width = $(this).prop('scrollWidth');
@@ -724,18 +733,13 @@ function savepcard(){
         //custconsole.log(height);
     });
 
-    $('.animateimg').each(function() {
-      var w = $(this).width();
-      //$(this).css('max-height', w);
-    });
-
           $(".pcard").each(function() {
         var height = $(this).height();
       var scroll = $(this).find('.pcardhide').prop('scrollHeight');
       var del = $(this).find('.qtyoverlay').prop('scrollHeight');
-        //$(this).css('min-height', height+scroll-del-10);
+        $(this).css('min-height', height+scroll-del-10);
         //$(this).css('min-height', height - h);
-        
+        console.log(height);
     });
   
 }
@@ -936,7 +940,7 @@ document.dispatchEvent(new CustomEvent('cart:build'));
 }
 
 $(document).ready(function() {
-    //$( "#tabs" ).tabs();
+    $( "#tabs" ).tabs();
   ppage();
     increase();
   sortby();
