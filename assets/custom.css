@@ -514,7 +514,7 @@ width: 12.5%;
 
 .pimage{
   overflow:hidden;
-  margin:0 auto;
+
   text-align:center;
 }
 
@@ -530,7 +530,8 @@ width: 12.5%;
 .pimage img{
   border-radius:50%;
   height:100%;
-  width:auto;
+  width: auto;
+  aspect-ratio: 1/1;
 }
 
 .pcardcompprice{
