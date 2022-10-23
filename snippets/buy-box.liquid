@@ -111,7 +111,7 @@ Only {{ current_variant.inventory_quantity }} in stock.
 
 {% if product.available %}
 <div class="buyboxform">
-<div data-price="{{ product.price }}" class="bbprice">Gesamt:<span data-product-price-c="{{ product.price }}" class="product__price">5,99€
+<div data-price="{{ product.price }}" class="bbprice">Gesamt:<span data-product-price-c="{{ product.price }}" class="product__price">{{product.price | money}}
 </span></div>
 <div class="js-qty__wrapper">
   <input type="text" id="Quantity-template--16146096554252__main7429582717163" class="js-qty__num" value="1" min="1" aria-label="quantity" pattern="[0-9]*" form="AddToCartForm-template--16146096554252__main-7429582717163" name="quantity" mm-min="1" mm-stock-max="NaN" step="1" mm-step="1">

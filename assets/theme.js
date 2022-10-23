@@ -4442,8 +4442,8 @@ lazySizesConfig.expFactor = 4;
     }
   
     function reset() {
-      cache.wrapper.classList.add('hide');
-      cache.results.innerHTML = '';
+      //cache.wrapper.classList.add('hide');
+      //cache.results.innerHTML = '';
       clearTimeout(searchTimeout);
     }
   
