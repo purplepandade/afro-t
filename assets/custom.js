@@ -146,7 +146,17 @@ console.log(that);
 }
 
 //Suchfunction Ajax Kategorien
+function searchSet(){
+$(".ttextinput").keyup(function() {
+  console.log('TEST')
+    var tags = $('#cat').val();
+    var query = $(this).val();
+    search(query);
+});
+}
+
 function search(query) {
+  //console.log('search activated');
     jQuery.getJSON("/search/suggest.json", {
         "q": query,
         "resources": {
@@ -272,11 +282,7 @@ function createresult(product) {
 
 
 //CustomSuchleiste
-$(".ttextinput").keyup(function() {
-    var tags = $('#cat').val();
-    var query = $(this).val();
-    search(query);
-});
+
 
 $(".ttextinput").focusout(function() {
 
@@ -572,6 +578,10 @@ $( ".cstmqty .js-qty__adjust--plus" ).on( "click", function() {
   var h2  = $(this).parent().parent().parent().prop('scrollHeight') //pcardhide
     console.log($(this).parent().parent().parent());
   var card = $(this).parent().parent().parent().siblings('.pholder');
+
+
+  card.parent().css('min-height', card.parent().outerHeight());
+
   var parentheight = card.outerHeight();
     //console.log($(this).parent().parent().parent().prop('scrollHeight'));
   $(this).parent().parent().siblings('.btnholderc').animate({
@@ -946,6 +956,7 @@ $(document).ready(function() {
     search();
     card();
   accajax();
+  searchSet();
 
 
 });
