@@ -1,5 +1,5 @@
 $(window).on("load", function() {
-  initImg();
+  
   if ($(window).width() > 768){
    //hover(); 
   }else{
@@ -7,6 +7,9 @@ $(window).on("load", function() {
     savepcard();
     stickyheader();
   }
+
+  initImg();
+
 });
 
 document.addEventListener('cart:updated', function(evt) {
@@ -84,10 +87,14 @@ else{
 
 
 var that2 = $('#mobilewrapper');
-var top2 = that2.offset().top;
+
+
 
 if ($('#mobilewrapper').length){
+var top2 = that2.offset().top;
+
 that2.attr('data-scrolltop', top);
+
 }
 
 $(window).scroll(function(){
