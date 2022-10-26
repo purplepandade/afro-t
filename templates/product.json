@@ -153,11 +153,6 @@
         "max_width": true
       }
     },
-    "4f6967d2-1439-4930-a1ce-30e802f2e4dc": {
-      "type": "reputon-google-reviews-1665606324789",
-      "settings": {
-      }
-    },
     "product-recommendations": {
       "type": "product-recommendations",
       "disabled": true,
@@ -222,6 +217,11 @@
         "0d26fe8e-81f1-4a1d-bd4a-e40b43135b5e",
         "df085b4c-e245-4e8a-9555-40d7480cf22f"
       ],
+      "settings": {
+      }
+    },
+    "4f6967d2-1439-4930-a1ce-30e802f2e4dc": {
+      "type": "reputon-google-reviews-1665606324789",
       "settings": {
       }
     },
@@ -432,11 +432,11 @@
   "order": [
     "main",
     "sub",
-    "4f6967d2-1439-4930-a1ce-30e802f2e4dc",
     "product-recommendations",
     "recently-viewed",
     "collection-return",
     "166153247831ea0ec7",
+    "4f6967d2-1439-4930-a1ce-30e802f2e4dc",
     "16615325344e7e0ce0",
     "1662574722b00aac9d",
     "1662984490298ebb71",
