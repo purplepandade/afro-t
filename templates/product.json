@@ -146,6 +146,11 @@
         "product_video_style": "muted"
       }
     },
+    "4f6967d2-1439-4930-a1ce-30e802f2e4dc": {
+      "type": "reputon-google-reviews-1665606324789",
+      "settings": {
+      }
+    },
     "sub": {
       "type": "product-full-width",
       "disabled": true,
@@ -426,6 +431,7 @@
   },
   "order": [
     "main",
+    "4f6967d2-1439-4930-a1ce-30e802f2e4dc",
     "sub",
     "product-recommendations",
     "recently-viewed",
