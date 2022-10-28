@@ -11,7 +11,8 @@
             "p": "Bestelle noch heute und erhalte die Produkte innerhalb von 1-3 Werktagen zu Dir nach Hause geliefert.",
             "url": "shopify:\/\/collections\/all",
             "urltext": "ZUM SHOP",
-            "bgcolor": "#d5dee5"
+            "bgcolor": "#d5dee5",
+            "fullw": false
           }
         },
         "59212492-899f-4cec-b3cc-583c1e1507e3": {
@@ -23,7 +24,8 @@
             "p": "Als Bronze Member kriegst du 25% Rabatt, als Silber Member 50% und sogar als Gold Member 100% Rabatt auf deine Bestellung!",
             "url": "",
             "urltext": "member werden",
-            "bgcolor": "#fdb073"
+            "bgcolor": "#fdb073",
+            "fullw": false
           }
         }
       },
@@ -176,6 +178,16 @@
         "title": "Kategorien"
       }
     },
+    "26c7c4a2-46ba-48e0-ae7d-b0b157ae4a29": {
+      "type": "fleximg",
+      "settings": {
+        "hidemobile": false,
+        "img": "shopify:\/\/shop_images\/africanbeauty.jpg",
+        "title": "TEST",
+        "text": "TEST",
+        "reverse": true
+      }
+    },
     "86d25f28-1a50-4813-8b9e-a4778f63f56d": {
       "type": "reputon-google-reviews-1665606324789",
       "settings": {
@@ -252,7 +264,8 @@
             "collection": "african-beauty",
             "title": "African Beauty",
             "image": "shopify:\/\/shop_images\/image2.png",
-            "color": "#ffffff"
+            "color": "#ffffff",
+            "hidemob": false
           }
         },
         "18a34082-20b4-46af-890f-a875514a7ebc": {
@@ -262,7 +275,8 @@
             "collection": "afp",
             "title": "AFP",
             "image": "shopify:\/\/shop_images\/image_1.png",
-            "color": "#ffffff"
+            "color": "#ffffff",
+            "hidemob": false
           }
         },
         "789268ee-fa54-4b59-8226-52f11e4985a4": {
@@ -271,7 +285,8 @@
             "collection": "cantu",
             "title": "Cantu",
             "image": "shopify:\/\/shop_images\/Mask_group.png",
-            "color": "#ffffff"
+            "color": "#ffffff",
+            "hidemob": false
           }
         },
         "75439a27-01bf-42d4-ba0f-5b8f59505cbe": {
@@ -280,7 +295,8 @@
             "collection": "mama-t",
             "title": "Mama-T",
             "image": "shopify:\/\/shop_images\/Mamat_logo_7484_icon_1.jpg",
-            "color": "#ffffff"
+            "color": "#ffffff",
+            "hidemob": false
           }
         },
         "dd016ee0-e982-479a-bf4a-305e410db455": {
@@ -289,7 +305,8 @@
             "collection": "shea-moisture",
             "title": "Shea Moisture",
             "image": "shopify:\/\/shop_images\/Mask_group_5a85b4bd-bcad-4d6e-90a5-c2f681e4fa62.png",
-            "color": "#ffffff"
+            "color": "#ffffff",
+            "hidemob": false
           }
         }
       },
@@ -348,15 +365,6 @@
       ],
       "settings": {
       }
-    },
-    "16629438018945c65c": {
-      "type": "fleximgusp",
-      "disabled": true,
-      "settings": {
-        "img": "shopify:\/\/shop_images\/Image3.jpg",
-        "title": "TEST",
-        "text": "LELELELELLELELEE"
-      }
     }
   },
   "order": [
@@ -365,11 +373,11 @@
     "1659363556b0957596",
     "1659636438ba1b39b2",
     "16593759475dcf22c5",
+    "26c7c4a2-46ba-48e0-ae7d-b0b157ae4a29",
     "86d25f28-1a50-4813-8b9e-a4778f63f56d",
     "1660050485d870fcd1",
     "1662942948dca4fdab",
     "1660148689ef4c8121",
-    "1660153904a5950ca3",
-    "16629438018945c65c"
+    "1660153904a5950ca3"
   ]
 }

@@ -220,6 +220,11 @@
       "settings": {
       }
     },
+    "4f6967d2-1439-4930-a1ce-30e802f2e4dc": {
+      "type": "reputon-google-reviews-1665606324789",
+      "settings": {
+      }
+    },
     "16615325344e7e0ce0": {
       "type": "apps",
       "blocks": {
@@ -300,7 +305,7 @@
         "e16bf18c-89c3-4b66-9d94-de082ba82f29": {
           "type": "text",
           "settings": {
-            "text": "<p>Raised without antibiotics and full of flavor, this beef is the base of big, juicy burgers, savory meat loaf and rich Bolognese sauce. You can enjoy this delicious local ground beef for your meatloaf, burgers, meatballs, shepherd’s pie, spicy taco meat and so much more.<\/p><p><\/p><p>As one of Farmart’s premium beef suppliers, Local Angus works with a coalition of small family farms throughout the Mid-Atlantic region* who feed their cattle a diet of primarily grass, supplemented by grain throughout the finishing months. Every farm in this program is independently audited for animal welfare practices to ensure the best standards of care.<\/p><p><\/p><p><strong>Preparation and Usage<\/strong><\/p><p>For perfectly cooked beef, our head chef recommends:<\/p><p><strong>Storage<\/strong><\/p><p>Keep refrigerated 0-5oC. Consume within the use by date. Once pack is opened use on the same day. Suitable for freezing on day of purchase. Use within one month. Defrost fully before use. Do not re-freeze once defrosted.<\/p>"
+            "text": "<p>{{ product.metafields.custom.langbeschreibung | metafield_tag }}<\/p>"
           }
         },
         "03e928d8-9277-46ee-9966-838cdf2a4f51": {
@@ -431,6 +436,7 @@
     "recently-viewed",
     "collection-return",
     "166153247831ea0ec7",
+    "4f6967d2-1439-4930-a1ce-30e802f2e4dc",
     "16615325344e7e0ce0",
     "1662574722b00aac9d",
     "1662984490298ebb71",

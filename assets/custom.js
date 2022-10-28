@@ -1,4 +1,5 @@
 $(window).on("load", function() {
+  
   if ($(window).width() > 768){
    //hover(); 
   }else{
@@ -6,6 +7,9 @@ $(window).on("load", function() {
     savepcard();
     stickyheader();
   }
+
+  initImg();
+
 });
 
 document.addEventListener('cart:updated', function(evt) {
@@ -83,10 +87,14 @@ else{
 
 
 var that2 = $('#mobilewrapper');
-var top2 = that2.offset().top;
+
+
 
 if ($('#mobilewrapper').length){
+var top2 = that2.offset().top;
+
 that2.attr('data-scrolltop', top);
+
 }
 
 $(window).scroll(function(){
@@ -146,7 +154,17 @@ console.log(that);
 }
 
 //Suchfunction Ajax Kategorien
+function searchSet(){
+$(".ttextinput").keyup(function() {
+  console.log('TEST')
+    var tags = $('#cat').val();
+    var query = $(this).val();
+    search(query);
+});
+}
+
 function search(query) {
+  //console.log('search activated');
     jQuery.getJSON("/search/suggest.json", {
         "q": query,
         "resources": {
@@ -159,11 +177,18 @@ function search(query) {
         }
 
     }).done(function(response) {
-        var productSuggestions = response.resources.results.products;
-        createresult(productSuggestions);
+      var productSuggestions = response.resources.results.products;
+
+      if (productSuggestions.length == 0 ){
+        console.log('Suche leer');
+          $('#searchres').text('Keine Ergebnisse. Versuche es mit einem anderem Suchbegriff.');
+          $('#PredictiveResults').text('Keine Ergebnisse. Versuche es mit einem anderem Suchbegriff.');
+      return
+      }
+      createresult(productSuggestions);
       increase();
       atc();
-      console.log(response)
+      //console.log(response)
     });
 }
 
@@ -204,13 +229,16 @@ function creatediv(item){
 }
 
 function filtereddiv(count,item,arr){
-  console.log(count + "TET");      
+  console.log(count + "TET");    
+  console.log(count);  
   if (count == 0){
+    
           $('#searchres').empty();
           $('#searchres').text('Keine Suchergebnisse gefunden.');
           //$('#PredictiveResults').empty();
-          //$('#PredictiveResults').text('Keine Suchergebnisse gefunden.');
-    $('#searchres').css("display", "block").fadeIn(1000);
+          console.log('KEINE ERGEBNISSE DIV');
+          $('#PredictiveResults').text('Keine Suchergebnisse gefunden.');
+            $('#searchres').css("display", "block").fadeIn(1000);
         }
   else{
     $('#searchres').empty();
@@ -244,12 +272,18 @@ function filtereddiv(count,item,arr){
 }
 
 function createresult(product) {
+
+
   var filter = $('#cat').val();
   console.log(filter);
   $('#searchres').empty();
   $('#PredictiveResults').empty();
   var filtered=[];
+
+
+
   var count = 0;
+
     product.forEach(function(item) {
       if (filter !== 'all'){
         console.log(item);
@@ -262,7 +296,6 @@ function createresult(product) {
       filtereddiv(count,item,filtered);
       }
       else{
-        
         creatediv(item);
       }
 
@@ -272,23 +305,22 @@ function createresult(product) {
 
 
 //CustomSuchleiste
-$(".ttextinput").keyup(function() {
-    var tags = $('#cat').val();
-    var query = $(this).val();
-    search(query);
-});
+
 
 $(".ttextinput").focusout(function() {
 
 });
 
+function faq(){
 $('.faq-title').on("click", function(e) {
+  console.log('FAQ CLICKED');
 
 
 var sib = $(this).siblings('.faq-content');
 sib.slideToggle('slow');
 $(this).find('svg').toggleClass('rot');
 });
+}
 
 $(document).on("click", function(e) {
      if ($(e.target).closest("#searchres").length === 0) {
@@ -572,6 +604,10 @@ $( ".cstmqty .js-qty__adjust--plus" ).on( "click", function() {
   var h2  = $(this).parent().parent().parent().prop('scrollHeight') //pcardhide
     console.log($(this).parent().parent().parent());
   var card = $(this).parent().parent().parent().siblings('.pholder');
+
+
+  card.parent().css('min-height', card.parent().outerHeight());
+
   var parentheight = card.outerHeight();
     //console.log($(this).parent().parent().parent().prop('scrollHeight'));
   $(this).parent().parent().siblings('.btnholderc').animate({
@@ -836,6 +872,8 @@ $( ".rec-p button" ).on( "click", function(){
 });
 
 $( ".buyboxitem").on( "click", function(){
+$(this).siblings().removeClass('focus');
+$(this).addClass('focus');
 var qty = $(this).data('qty');
   
 var plus = $('[data-fqty]').find('.js-qty__adjust--plus');
@@ -935,6 +973,12 @@ document.dispatchEvent(new CustomEvent('cart:build'));
   
 }
 
+function initImg(){
+  $(".pimage").each(function() {
+ $(this).children('img').css('max-height', $(this).width());
+  });
+}
+
 $(document).ready(function() {
     //$( "#tabs" ).tabs();
   ppage();
@@ -946,6 +990,8 @@ $(document).ready(function() {
     search();
     card();
   accajax();
+  searchSet();
+  faq();
 
 
 });

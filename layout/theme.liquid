@@ -2,6 +2,13 @@
 <html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction }}">
 <head>
   
+  <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"></script>
+    
+<script src="{{ 'custom.js' | asset_url }}"></script>
+
 <!-- Hotjar Tracking Code for https://www.mama-t.de -->
 <script>
     (function(h,o,t,j,a,r){
@@ -94,14 +101,10 @@
     <link rel="stylesheet" href="{{ 'country-flags.css' | asset_url | split: '?' | first }}">
   {%- endif -%}
 
-<script
-  src="https://code.jquery.com/jquery-3.6.1.min.js"
-  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-  crossorigin="anonymous"></script>
+
 
   
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'custom.js' | asset_url }}"></script>
 
 
 

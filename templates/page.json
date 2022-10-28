@@ -1,1 +1,18 @@
-{"sections":{"main":{"type":"main-page","settings":{}}},"order":["main"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "10f61459-5989-45f5-8819-79afd5d7562d": {
+      "type": "reputon-google-reviews-1665606324789",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "10f61459-5989-45f5-8819-79afd5d7562d"
+  ]
+}
