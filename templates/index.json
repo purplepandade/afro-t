@@ -180,6 +180,7 @@
     },
     "26c7c4a2-46ba-48e0-ae7d-b0b157ae4a29": {
       "type": "fleximg",
+      "disabled": true,
       "settings": {
         "hidemobile": false,
         "img": "shopify:\/\/shop_images\/africanbeauty.jpg",
