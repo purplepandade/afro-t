@@ -113,8 +113,8 @@
             "type": "announcement",
             "settings": {
               "text": "GRATIS CHINCHIN ZU JEDER BESTELLUNG",
-              "link_text": "Erhalte zu jeder Bestellung eine Packung Chinchin gratis dazu!",
-              "link": "shopify:\/\/collections\/all"
+              "link_text": "",
+              "link": ""
             }
           }
         },
