@@ -108,10 +108,19 @@
               "desktop_logo_width": 200,
               "mobile_logo_width": 60
             }
+          },
+          "80db4d14-aba0-4222-b729-d99282180472": {
+            "type": "announcement",
+            "settings": {
+              "text": "GRATIS CHINCHIN ZU JEDER BESTELLUNG",
+              "link_text": "",
+              "link": ""
+            }
           }
         },
         "block_order": [
-          "1524768779513"
+          "1524768779513",
+          "80db4d14-aba0-4222-b729-d99282180472"
         ],
         "settings": {
           "main_menu_link_list": "sidebarmenu",
