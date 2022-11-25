@@ -88,6 +88,15 @@
       },
       {
         "type": "header",
+        "content": "Global Variables"
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_link",
+        "label": "Whatsapp Link (Sticky)"
+      },
+      {
+        "type": "header",
         "content": "Header"
       },
       {
