@@ -8,6 +8,20 @@
     "theme_support_url": "https:\/\/archetypethemes.co\/pages\/support#impulse"
   },
   {
+    "name": "PurplePanda",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Global Variables"
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_link",
+        "label": "Whatsapp Link (Sticky)"
+      }
+    ]
+  },
+  {
     "name": "Colors",
     "settings": [
       {
@@ -85,15 +99,6 @@
         "id": "color_large_image_bg",
         "label": "Image section background",
         "default": "#1c1d1d"
-      },
-      {
-        "type": "header",
-        "content": "Global Variables"
-      },
-      {
-        "type": "text",
-        "id": "whatsapp_link",
-        "label": "Whatsapp Link (Sticky)"
       },
       {
         "type": "header",
