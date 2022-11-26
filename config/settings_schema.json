@@ -18,6 +18,12 @@
         "type": "text",
         "id": "whatsapp_link",
         "label": "Whatsapp Link (Sticky)"
+      },
+      {
+        "type": "text",
+        "id": "free_shipping_text",
+        "label": "Free Shipping Text",
+        "info": "Use _freeshipping_ for the Value Placeholder"
       }
     ]
   },
