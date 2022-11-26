@@ -249,7 +249,7 @@
 
 <div class="freeshipping newslettercta"><a style="color:#D82C0D"href="/pages/mama-t-club">Erhalte 20% Rabatt</a></div>
 
-    {% assign freeshipping = settings.freeshipping | money %}
+    {% assign freeshipping = settings.freeshipping %}
     
 <div class="freeshipping">{% render 'bluetruck' %} {{ settings.free_shipping_text | replace: "_freeshipping_",freeshipping }}</div>
 </div>
