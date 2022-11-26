@@ -1,5 +1,7 @@
 {
   "current": {
+    "whatsapp_link": "https:\/\/wa.me\/4915906355599",
+    "free_shipping_text": "Free Shipping ab _freeshipping_",
     "color_body_bg": "#ffffff",
     "color_body_text": "#202223",
     "color_price": "#1d4835",
@@ -11,7 +13,6 @@
     "color_cart_dot": "#b30000",
     "color_small_image_bg": "#000000",
     "color_large_image_bg": "#111111",
-    "whatsapp_link": "https:\/\/wa.me\/4915906355599",
     "color_header": "#ffffff",
     "color_header_text": "#000000",
     "color_announcement": "#1d4835",
