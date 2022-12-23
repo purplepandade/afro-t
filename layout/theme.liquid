@@ -122,8 +122,9 @@
 
   gtag('config', 'AW-448446612');
 </script>
-</head>
+  {% if template == 'cart' %}{% include "revy-bundle-script" %}{% endif %}
 
+</head>
 <body data-freeshipping="{{ settings.freeshipping | divided_by:1 }}" class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}" data-center-text="{{ settings.type_body_align_text }}" data-button_style="{{ settings.button_style }}" data-type_header_capitalize="{{ settings.type_header_capitalize }}" data-type_headers_align_text="{{ settings.type_headers_align_text }}" data-type_product_capitalize="{{ settings.type_product_capitalize }}" data-swatch_style="{{ settings.swatch_style }}" {% if settings.disable_animations %}data-disable-animations="true"{% endif %}>
 <script>
 
@@ -164,5 +165,6 @@
 
 {% include 'appikon-discounts' %}
 <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=TSgWXt"></script>
+  {% include 'revy-bundle-script' %}
 </body>
 </html>
